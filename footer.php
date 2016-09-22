@@ -10,15 +10,20 @@
  */
 
 ?>
-
+<section id="newsletter">
+<h2>Subscribe to our Newsletter:</h2>
+<p>Add your email address and receive an email every Friday covering off everything worth knowing about building your websites responsively.</p>
+<form action="//responsivedesignweekly.us4.list-manage.com/subscribe/post?u=559bc631fe5294fc66f5f7f89&amp;id=df65b6d7c8" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
+<input type="hidden" name="LOCATION" value="rwd.is">
+<input type="email" name="EMAIL" value="">
+<button id="mc-embedded-subscribe" type="submit" name="subscribe" onclick="ga('send', 'event', 'RWD Weekly', 'Subscribe', 'Responsive Design Knowledge Hub');">Sign Up</button>
+</form>
+</section>
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'rwd-is' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'rwd-is' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'rwd-is' ), 'rwd-is', '<a href="http://underscores.me/" rel="designer">Underscores.me</a>' ); ?>
-		</div><!-- .site-info -->
+
+	<footer id="footer" class="site-footer" role="contentinfo">
+
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

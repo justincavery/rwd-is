@@ -15,7 +15,10 @@
 get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
+      <h1>Responsive Web Design Is....</h1>
       <?php the_field(home_introduction_text); ?>
+      <a href="/articles">Read latest articles</a>
+      <a href="#">or learn more</a>
       <?php the_field(home_promo_box_1_title); ?>
       <?php the_field(home_promo_box_1_image); ?>
       <?php the_field(home_promo_box_1_description); ?>
@@ -39,6 +42,9 @@ get_header(); ?>
 
  <div class="post">
 
+  <?php if ( has_post_thumbnail() ) : ?>
+    <img src="<?php the_post_thumbnail_url( 'medium'); ?>"/>
+  <?php endif; ?>
  <!-- Display the Title as a link to the Post's permalink. -->
  <h3><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
 
