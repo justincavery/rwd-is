@@ -108,16 +108,16 @@ function rwd_is_scripts() {
 
 	// wp_enqueue_script( 'rwd-is-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
+//	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+//		wp_enqueue_script( 'comment-reply' );
+//	}
 }
 add_action( 'wp_enqueue_scripts', 'rwd_is_scripts' );
 
 /**
  * Implement the Custom Header feature.
  */
-require get_template_directory() . '/inc/custom-header.php';
+//require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
@@ -305,3 +305,11 @@ function CPT_register_my_cpts_resource() {
 
 // End of CPT_register_my_cpts_example()
 }
+
+// remove the prefetch meta tag for wordpress.org
+add_filter( 'emoji_svg_url', '__return_false' );
+// remove the emojis.
+remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+remove_action( 'wp_print_styles', 'print_emoji_styles' );
+//remove the "This page is built by Wordpress" item
+remove_action('wp_head', 'wp_generator');
