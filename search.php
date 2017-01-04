@@ -8,16 +8,10 @@
  */
 
 get_header(); ?>
-
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
-
+<div class="content">
+	<div class="entry grid">
 		<?php
 		if ( have_posts() ) : ?>
-
-			<header class="page-header">
-				<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'rwd-is' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-			</header><!-- .page-header -->
 
 			<?php
 			/* Start the Loop */
@@ -31,18 +25,29 @@ get_header(); ?>
 				get_template_part( 'template-parts/content', 'search' );
 
 			endwhile;
-
-			the_posts_navigation();
-
+?>
+			<div class="grid">
+			    <div class="grid__row">
+			        <div class="grid__column grid__column--full">
+			            <div class="example-content">
+<?php
+			the_posts_navigation( array(
+			            'prev_text'                  => __( 'Next page of results' ),
+			            'next_text'                  => __( 'Previous page of results' ),
+			            'screen_reader_text' => __( 'Additional Search Results' ),
+			        ) ); ?>
+			          </div>
+			      </div>
+			  </div>
+			</div>
+			<?php
 		else :
 
 			get_template_part( 'template-parts/content', 'none' );
 
 		endif; ?>
-
-		</main><!-- #main -->
-	</section><!-- #primary -->
+</div>
+</div>
 
 <?php
-get_sidebar();
 get_footer();

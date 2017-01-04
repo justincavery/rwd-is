@@ -12,9 +12,7 @@
  */
 
 get_header(); ?>
-
-  <section id="primary" class="content-area">
-    <div id="content" class="site-content" role="main">
+<h1>tag.php</h1>
 
       <?php if ( have_posts() ) : ?>
 

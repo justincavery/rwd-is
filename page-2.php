@@ -13,88 +13,190 @@
  */
 
 get_header(); ?>
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
-      <h1>Responsive Web Design Is....</h1>
-      <?php the_field(home_introduction_text); ?>
-      <a href="/articles">Read latest articles</a>
-      <a href="#">or learn more</a>
-      <?php the_field(home_promo_box_1_title); ?>
-      <?php the_field(home_promo_box_1_image); ?>
-      <?php the_field(home_promo_box_1_description); ?>
-      <?php the_field(home_promo_box_1_button_text); ?>
-      <?php the_field(home_promo_box_1_button_url); ?>
-      <?php the_field(home_promo_box_2_title); ?>
-      <?php the_field(home_promo_box_2_image); ?>
-      <?php the_field(home_promo_box_2_description); ?>
-      <?php the_field(home_promo_box_2_button_text); ?>
-      <?php the_field(home_promo_box_2_button_url); ?>
-      <?php the_field(home_promo_box_3_title); ?>
-      <?php the_field(home_promo_box_3_image); ?>
-      <?php the_field(home_promo_box_3_description); ?>
-      <?php the_field(home_promo_box_3_button_text); ?>
-      <?php the_field(home_promo_box_3_button_url); ?>
+<div class="site-header site-header--expanded">
+  <div class="welcome">
+    <header class="welcome__header">
+      <h1 class="welcome__logo logo">Responsive Design</h1>
+    </header>
+    <div class="welcome__body">
+      <h2 class="welcome__title"><span>Responsive</span> Web Design Is&hellip;</h2>
+      <div class="welcome__lead">
+          <?php the_field(home_introduction_text); ?>
+                <a href="/articles" class="btn btn--cta btn--inverted">Read Latest Articles</a>
+              </div>
+            </div>
+          </div>
 
-<h2>Latest RWD News</h2>
+          <div class="learn-more">
+            Or Learn More <span class="icon icon--down"></span>
+          </div>
 
-<?php $query = new WP_Query( 'cat=39&posts_per_page=3' ); ?>
+            <ul class="section-summaries">
+              <li class="section-summaries__item">
+                <img class="section-summaries__image" src="<?php the_field(home_promo_box_1_image); ?>" alt=" ">
+
+                <div class="section-summaries__container">
+                  <header class="section-summaries__header">
+                    <h2 class="section-summaries__title"><?php the_field(home_promo_box_1_title); ?></h2>
+                  </header>
+                  <div class="section-summaries__body">
+                    <?php the_field(home_promo_box_1_description); ?>
+                  </div>
+                  <footer class="section-summaries__footer">
+                    <a class="btn btn--cta" href="<?php the_field(home_promo_box_1_button_url); ?>"><?php the_field(home_promo_box_1_button_text); ?></a>
+                  </footer>
+                </div>
+              </li>
+              <li class="section-summaries__item">
+                <img class="section-summaries__image" src="<?php the_field(home_promo_box_2_image); ?>" alt=" ">
+
+                <div class="section-summaries__container">
+                  <header class="section-summaries__header">
+                    <h2 class="section-summaries__title"><?php the_field(home_promo_box_2_title); ?></h2>
+                  </header>
+                  <div class="section-summaries__body">
+                    <?php the_field(home_promo_box_2_description); ?>
+                  </div>
+                  <footer class="section-summaries__footer">
+                    <a href="<?php the_field(home_promo_box_2_button_url); ?>" class="btn btn--cta"><?php the_field(home_promo_box_2_button_text); ?></a>
+                  </footer>
+                </div>
+              </li>
+              <li class="section-summaries__item">
+                <img class="section-summaries__image" src="<?php the_field(home_promo_box_3_image); ?>" alt=" ">
+
+                <div class="section-summaries__container">
+                  <header class="section-summaries__header">
+                    <h2 class="section-summaries__title"><?php the_field(home_promo_box_3_title); ?></h2>
+                  </header>
+                  <div class="section-summaries__body">
+                    <?php the_field(home_promo_box_3_description); ?>
+                  </div>
+                  <footer class="section-summaries__footer">
+                    <a href="<?php the_field(home_promo_box_3_button_url); ?>" class="btn btn--cta"><?php the_field(home_promo_box_3_button_text); ?></a>
+                  </footer>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="content">
+            <div class="section grid">
+              <div class="grid__row">
+                <!-- Begin Latest News -->
+                <div class="grid__column grid__column--two-thirds">
+                  <div class="section__column section__column--right-divider">
+                    <header class="section__header">
+                      <h2 class="section-heading"><span class="icon icon--news"></span> Latest RWD News</h2>
+                    </header>
+<?php $query = new WP_Query( 'cat=39&posts_per_page=4' ); ?>
  <?php if ( $query->have_posts() ) : while ( $query->have_posts() ) : $query->the_post(); ?>
 
- <div class="post">
+ <div class="resource resource--post resource--wide">
 
   <?php if ( has_post_thumbnail() ) : ?>
-    <img src="<?php the_post_thumbnail_url( 'medium'); ?>"/>
+  <div class="resource__image">
+    <a href="<?php the_permalink() ?>">
+      <?php the_post_thumbnail( 'medium', ['sizes' => '(min-width:64em) 33vw,(min-width:48em) 50vw,(min-width:37.5em) 100vw, 100vw']);
+      ?>
+    </a>
+
+
+  </div>
   <?php endif; ?>
  <!-- Display the Title as a link to the Post's permalink. -->
- <h3><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
+ <div class="resource__content">
+               <header class="resource__header">
+                 <h3 class="resource__title"><a href="<?php the_permalink() ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
+                   <div class="resource__meta"><?php the_time( 'F jS, Y' ); ?> by <a href="<?php the_field(news_website_link); ?>"><?php the_field(news_article_author); ?></a></div>
+                 </header>
 
- <!-- Display the date (November 16th, 2009 format) and a link to other posts by this posts author. -->
- <small><?php the_time( 'F jS, Y' ); ?> by <a href="<?php the_field(news_website_link); ?>"><?php the_field(news_article_author); ?></a></small>
-
-  <div class="entry">
-      <?php the_content(); ?>
+                 <div class="resource__body">
+                   <?php the_excerpt(); ?>
+                 </div>
+               <footer class="resource__footer">
+                 <a href="<?php the_permalink() ?>">Read more</a>
+               </footer>
+             </div>
   </div>
-<a href="?php the_permalink() ?>">Read More</a>
-  <p class="postmetadata"><?php _e( 'Posted in' ); ?> <?php the_tags( '', ', ' ); ?></p>
- </div> <!-- closes the first div box -->
-
  <?php endwhile;
  wp_reset_postdata();
  else : ?>
  <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
  <?php endif; ?>
+     <footer class="section__footer">
+       <a href="/news" class="btn">View All News</a>
+     </footer>
+   </div>
+ </div>
+ <!-- End Latest News -->
 
-
-
-
-<h2>Podcasts</h2>
+ <!-- Begin Podcasts -->
+ <div class="grid__column grid__column--one-third">
+   <div class="section__column section__column--left-divider">
+     <header class="section__header">
+       <h2 class="section-heading"><span class="icon icon--podcast"></span> Fresh From The Podcast</h2>
+     </header>
 <?php
 $newqueryObject = new WP_Query(array(
   'post_type' => 'podcasts',
   'order' => 'DESC',
-  'posts_per_page' => '4'
+  'posts_per_page' => '3'
 ));
 // The Loop!
 if ($newqueryObject->have_posts()) {
     ?>
-    <ul>
-  <?php
+<!--     <ul>
+ -->  <?php
   while ($newqueryObject->have_posts()) {
       $newqueryObject->the_post();
       ?>
-      <li>
-            <a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
-            <date><?php the_time('F jS, Y'); ?></date>
-            <?php the_excerpt(); ?>
+      <div class="resource resource--podcast resource--small">
+        <header class="resource__header">
+          <div class="podcast-banner">
+            <a class="podcast-banner__link" href="<?php the_permalink(); ?>">
+              <div class="podcast-banner__image" style="background-image: url(<?php the_post_thumbnail_url( 'large'); ?>);"></div>
+              <div class="podcast-banner__body">
+                <h3 class="podcast-banner__title">Responsive<br/>Design<br/>Podcast <small>with <?php $row = 1; if(get_field('podcast_guests')): ?><?php while(has_sub_field('podcast_guests')): ?>
+  <?php if($row == 1) { the_sub_field('podcast_guest_name'); } ?><?php $row++; endwhile; ?><?php endif; ?></small></h3>
+              </div>
+            </a>
+          </div>
+          <h3 class="resource__title"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h3>
+          <div class="resource__meta"><?php the_time('F jS, Y'); ?></div>
+        </header>
+        <div class="resource__body">
+          <?php the_excerpt(); ?>
+        </div>
+      </div>
       <?php wp_reset_postdata(); ?>
-</li>
+<!-- </li> -->
   <?php }?>
-</ul>
-  <?php }?>
-<a href="/podcasts">View all episodes</a>
+<!-- </ul>
+ -->  <?php }?>
+         <footer class="section__footer">
+           <a href="/podcasts" class="btn">View All Episodes</a>
+         </footer>
+       </div>
+     </div>
+   </div>
+ </div>
+<!-- End Podcasts -->
 
+<!-- Begin Latest Articles -->
 
-<h2>Articles</h2>
+<div class="section section--highlighted grid">
+  <div class="grid__row">
+    <div class="grid__column grid__column--full">
+      <div class="section__column">
+        <header class="section__header">
+          <h2 class="section-heading"><span class="icon icon--articles"></span> Most Recent Articles</h2>
+        </header>
+      </div>
+    </div>
+  </div>
+  <div class="grid__row">
+
 <?php
 $newqueryObject = new WP_Query(array(
   'post_type' => 'article',
@@ -104,23 +206,43 @@ $newqueryObject = new WP_Query(array(
 // The Loop!
 if ($newqueryObject->have_posts()) {
     ?>
-    <ul>
-  <?php
+ <?php
   while ($newqueryObject->have_posts()) {
       $newqueryObject->the_post();
       ?>
-      <li>
-            <a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
-            <date><?php the_time('F jS, Y'); ?></date>
-            <?php the_excerpt(); ?>
-      <?php wp_reset_postdata(); ?>
-</li>
-  <?php }?>
-</ul>
-  <?php }?>
-<a href="/articles">View more articles</a>
+        <div class="grid__column grid__column--one-third">
+          <div class="section__column">
+            <div class="resource resource--post">
+              <div class="resource__image">
+                <a href="<?php the_permalink(); ?>">
+                  <?php the_post_thumbnail( 'medium', ['sizes' => '(min-width:64em) 33vw,(min-width:48em) 50vw, 100vw']);
+                ?></a>
+              </div>
+              <div class="resource__content">
+                <header class="resource__header">
+                  <h3 class="resource__title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+                  <date class="resource__meta"><?php the_time('F jS, Y'); ?></date>
+                </header>
+                <div class="resource__body">
+                  <?php the_excerpt(); ?>
+                </div>
+                <footer class="resource__footer">
+                  <a href="<?php the_permalink(); ?>">Read more</a>
+                </footer>
+              </div>
+            </div>
+          </div>
+        </div>
+        <?php wp_reset_postdata(); ?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+  <?php }?>
+
+  <?php }?>
+            <footer class="section__footer">
+              <a href="/articles" class="btn">View All Articles</a>
+            </footer>
+          </div>
+<!--         </div>
+      </div> -->
 
 <?php get_footer(); ?>

@@ -8,27 +8,20 @@
  */
 
 get_header(); ?>
-
-	<div id="primary" class="content-area example">
-		<main id="main" class="site-main" role="main">
-<h1>examples</h1>
 		<?php
 		while ( have_posts() ) : the_post();
 
 			get_template_part( 'template-parts/content-example', get_post_format() );
 
-			the_post_navigation();
-
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+      the_post_navigation( array(
+                  'prev_text'                  => __( 'Previous Example: %title' ),
+                  'next_text'                  => __( 'Next Example: %title' ),
+                  'in_same_term'               => false,
+                  'taxonomy'                   => __( 'post_tag' ),
+                  'screen_reader_text' => __( 'Other examples' ),
+              ) );
 
 		endwhile; // End of the loop.
 		?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
 <?php
 get_footer();

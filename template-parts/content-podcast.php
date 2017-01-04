@@ -8,96 +8,83 @@
  */
 
 ?>
+			<div class="content">
+					<div class="post">
+						<?php if ( has_post_thumbnail() ) { ?>
+													<?php the_post_thumbnail(); ?>
+							<?php } else { ?>
+								<!--  What, no image? -->
+							<?php }?>
+						<header class="post__header">
+							<?php the_title( '<h1 class="post__title">', '</h1>' ); ?>
+							<p class="post__meta">By <strong><?php the_author(); ?></strong>, <?php the_time( 'j F Y' ); ?> posted in <a href="#"><?php the_category( ' ' ); ?></a></p>
+						</header>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php
-		if ( is_single() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
+						<article class="post__body">
+							<?php the_field(podcast_summary);?>
+							<div class="meta-block">
+							    <div class="meta-block__aside">
+							        <ul class="meta-block__items">
+							            <li class="meta-block__item">
+							                <h3 class="meta-block__title">Episode</h3>
+							                <p><?php the_title();?></p>
+							            </li>
+							            <?php $row = 1; if(get_field('podcast_guests')): ?>
+							            <li class="meta-block__item">
+							                <h3 class="meta-block__title">Guest</h3>
+							                <p>
+							<?php while(has_sub_field('podcast_guests')): ?>
+							      <a href="<?php the_sub_field('podcast_guest_url'); ?>"><?php the_sub_field('podcast_guest_name'); ?></a>
+							<?php $row++; endwhile; ?>
 
-		if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php rwd_is_posted_on(); ?>
-		</div><!-- .entry-meta -->
-		<?php
-		endif; ?>
+							</p>
+							            </li><?php endif; ?>
+	                        <li class="meta-block__item">
+	                            <h3 class="meta-block__title">Length</h3>
+	                            <p><?php the_field(podcast_length);?></p>
+							                        </li>
+							        </ul>
+							    </div>
+							    <div class="meta-block__body">
+							        <h3 class="meta-block__title">Description</h3>
+							        <p><?php the_field(podcast_subtitle);?></p>
+							        <p><a class="btn btn--cta btn--inverted" href="<?php the_field(podcast_mp3_link);?>">Download MP3</a> <a class="btn btn--cta btn--inverted" href="https://itunes.apple.com/gb/podcast/responsive-design-podcast/id825631068?mt=2">Subscribe on iTunes</a></p>
+							    </div>
+							</div>
+							<hr />
+							<h2>Listen to episode <?php the_field(podcast_episode);?></h2>
+							<audio class="u-audio" controls="controls" preload="metadata">
+							Your browser does not support the <code>audio</code> element.
+							<source src="<?php the_field(podcast_mp3_link);?>" type="audio/mp3">
+							</audio>
 
-		<?php if ( has_post_thumbnail() ) { ?>
-				<div class="featured-image"><?php the_post_thumbnail(); ?></div>
-			<?php } else { ?>
-				<!--  What, no image? -->
-			<?php }?>
+							<?php
+								the_content();
 
-
-	</header><!-- .entry-header -->
-
-	<div class="entry-content">
-		<?php
-			the_content( sprintf(
-				/* translators: %s: Name of current post. */
-				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'rwd-is' ), array( 'span' => array( 'class' => array() ) ) ),
-				the_title( '<span class="screen-reader-text">"', '"</span>', false )
-			) );
-
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'rwd-is' ),
-				'after'  => '</div>',
-			) );
-		?>
-	</div><!-- .entry-content -->
-
-					<dl>
-						<dt>Podcast Name:</dt>
-						<dd><?php the_title();?></dd>
-					  <dt>Podcast Number:</dt>
-					  <dd><?php the_field(podcast_episode);?></dd>
-					  <dt>Podcast MP3:</dt>
-					  <dd><?php the_field(podcast_mp3_link);?></dd>
-					  <dt>Podcast Guests:</dt>
-					  <dd><?php $row = 1; if(get_field('podcast_guests')): ?>
-<ul>
-<?php while(has_sub_field('podcast_guests')): ?>
-<!-- START CAROUSEL ITEM -->
-
-  <li class="item <?php if($row == 1) { echo 'active'; } ?>">
-      <p><?php the_sub_field('podcast_guest_name'); ?></p>
-      <p><?php the_sub_field('podcast_guest_url'); ?></p>
-    <p><?php the_sub_field('podcast_guest_description'); ?></p>
-  <!-- END CAROUSEL ITEMs -->
-</li>
-<?php $row++; endwhile; ?>
-</ul>
-<?php endif; ?></dd>
-					  <dt>Podcast Sponsor Name:</dt>
-					  <dd><?php the_field(podcast_sponsor_name);?></dd>
-            <dt>Podcast Sponsor URL:</dt>
-            <dd><?php the_field(podcast_sponsor_url);?></dd>
-            <dt>Podcast Sponsor Image:</dt>
-            <dd><?php the_field(podcast_sponsor_image);?>
-            </dd>
-            <dt>Podcast Sponsor Description:</dt>
-            <dd><?php the_field(podcast_sponsor_description);?></dd>
-					  <dt>Podcast Length:</dt>
-					  <dd><?php the_field(podcast_length);?></dd>
-					  <dt>Podcast Size:</dt>
-					  <dd><?php the_field(podcast_size);?></dd>
-</dl>
+								wp_link_pages( array(
+									'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'rwd-is' ),
+									'after'  => '</div>',
+								) );
+							?>
 
 
-
-<img src="<?php echo wp_get_attachment_url(the_sub_field('home_carousel_image'));?>" alt="">
-
+						</article>
 
 
-
-
-
-
-
-	<footer class="entry-footer">
-		<?php rwd_is_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-## -->
+					</div>
+				<?php if ( get_edit_post_link() ) : ?>
+					<footer class="entry-footer">
+						<?php
+							edit_post_link(
+								sprintf(
+									/* translators: %s: Name of current post */
+									esc_html__( 'Edit %s', 'rwd-is' ),
+									the_title( '<span class="screen-reader-text">"', '"</span>', false )
+								),
+								'<span class="edit-link">',
+								'</span>'
+							);
+						?>
+					</footer><!-- .entry-footer -->
+				<?php endif; ?>
+</div>

@@ -9,39 +9,39 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header"><small>Page Content</small>
-		<?php
-		if ( is_single() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
 
-		if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php rwd_is_posted_on(); ?>
-		</div><!-- .entry-meta -->
-		<?php
-		endif; ?>
-	</header><!-- .entry-header -->
+<div class="content">
+		<div class="post">
+			<header class="post__header">
+				<?php the_title( '<h1 class="post__title">', '</h1>' ); ?>
+				<p class="post__meta">By <strong><?php the_author(); ?></strong>, <?php the_time( 'j F Y' ); ?> posted in <a href="#"><?php the_category( ' ' ); ?></a></p>
+			</header>
 
-	<div class="entry-content">
-		<?php
-			the_content( sprintf(
-				/* translators: %s: Name of current post. */
-				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'rwd-is' ), array( 'span' => array( 'class' => array() ) ) ),
-				the_title( '<span class="screen-reader-text">"', '"</span>', false )
-			) );
+			<article class="post__body">
 
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'rwd-is' ),
-				'after'  => '</div>',
-			) );
-		?>
-	</div><!-- .entry-content -->
+				<?php
+					the_content();
 
-	<footer class="entry-footer">
-		<?php rwd_is_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-## -->
+					wp_link_pages( array(
+						'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'rwd-is' ),
+						'after'  => '</div>',
+					) );
+				?>
+
+				<?php if ( has_post_thumbnail() ) { ?>
+				<div class="figure">
+											<?php the_post_thumbnail('post-standard'); ?>
+										</div>
+					<?php } else { ?>
+						<!--  What, no image? -->
+					<?php }?>
+				<blockquote>
+				<?php the_field(news_article_excerpt);?>
+				<small><cite>An excerpt from <?php the_title()?></cite></small>
+				</blockquote>
+
+<p><a class="btn" href="<?php the_field(news_article_link);?>">View original article</a></p>
+			</article>
+		</div>
+	<?php if ( get_edit_post_link() ) : ?>
+	<?php endif; ?>

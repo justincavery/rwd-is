@@ -14,16 +14,23 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+<div class="content content--divider">
+        <div class="section section--highlighted section--no-padding">
+            <div class="intro">
+            	<h1>Responsive Design News</h1>
+                <div class="intro__body">
+                    <p class="lead">Keep up with the latest news and developments around responsive design and the new direcitons that web designa and development are taking.</p>
+                </div>
+            </div>
+        </div>
 
-		<?php
+
+<div class="entry grid">
+  <div class="grid__row">
+ 		<?php
 		if ( have_posts() ) :
 
 			if ( is_home() && ! is_front_page() ) : ?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
 
 			<?php
 			endif;
@@ -36,21 +43,24 @@ get_header(); ?>
 				 * If you want to override this in a child theme, then include a file
 				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 				 */
-				get_template_part( 'template-parts/content', get_post_format() );
+				get_template_part( 'template-parts/content', 'news-listing' );
 
 			endwhile;
 
-			the_posts_navigation();
+	//		the_posts_navigation();
 
 		else :
 
 			get_template_part( 'template-parts/content', 'none' );
 
 		endif; ?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
+		</div>
+		</div>
+<?php		the_posts_pagination( array(
+			'mid_size'  => 2,
+			'prev_text' => __( 'Back', 'textdomain' ),
+			'next_text' => __( 'Onward', 'textdomain' ),
+		) );?>
+		</div>
 <?php
-get_sidebar();
 get_footer();

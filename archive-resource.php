@@ -14,27 +14,29 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
-
 <?php
 
-$terms = get_terms( array('taxonomy' => 'Resource', 'hide_empty' => false, ) );
+$terms = get_terms( array('taxonomy' => 'resource_tags', 'hide_empty' => true, ) );
 if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
-    echo '<ul>';
+    echo '<ul class="flex-grid article-list">';
     foreach ( $terms as $term ) {
-        echo '<li><a href="' . $term->slug . '">' . $term->name . '</a><p>' . $term->description . '</p></li>';
+        echo '<li><div class="resource resource--basic">
+        <a href="' . $term->slug . '" class="resource__link">
+          <header class="resource__header">
+          <h2 class="resource__title">' . $term->name . '</h2>
+          </header>
+          <div class="resource__body"><p>' . mb_strimwidth($term->description, 0, 200, '...') . '</div>
+      <footer class="resource__footer">
+          View Resources
+      </footer>
+  </a>
+</div></li>';
     }
     echo '</ul>';
 }
 
-
 ?>
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
 <?php
-get_sidebar();
 get_footer();
-
 ?>
+

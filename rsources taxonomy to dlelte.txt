@@ -1,0 +1,44 @@
+Boilerplates
+Boilerplates provide a full suite of tools that you might need for your responsive design project. Brilliant for prototyping with clients and able to get your project to beta faster than building from scratch.
+
+Books
+Responsive Web Design has been around the traps for a few years now, and certainly long enough for a few bright few to write some marvellous books about the subject. Whether you are just getting started or you want to hone your already ninja-like skills in responsive web design you will find some helpful tips in these resources. If you think there is something missing, then let us know and we will endeavour to get it added.
+
+Device Detection
+Device detection can play an important part for advanced implementations of responsive design. These resources will help you get started without having to build your own device list. Device detection, however, is not something that should be looked at when building responsive sites. That isn't to say that device detection does not have it's placed in the responsive world, but as a general rule, you should be looking at feature detection rather than device detection. We have listed a series of device detection tools to help you out with your projects. They come in two flavours of client side and server side. There are also some external services that you can take advantage of including WURFL that takes the management of the ever-changing array of device types out of your hand.
+
+Email Templates
+Email is often the last recognised area of website design because, well, it's not part of the standard website. This, however, does not make it any less important than your website design because a truly great design should span all the areas of your brand whether that be the website, business cards, letterheads or email templates.
+
+Frameworks
+Frameworks are designed to get you up and running with a functional fast and easy. There are lots of questions around whether you should use a framework in your project, and if so what is the best framework for your particular project. First of all, let's take a closer look exactly what a responsive framework is. The definition of the term "framework" is... - A structure for supporting or enclosing something else, especially a skeletal support used as the basis for something being constructed. - An external work platform; a scaffold. - A fundamental structure, as for a written work. - A set of assumptions, concepts, values, and practices that constitute a way of viewing reality. ... and responsive frameworks are no different when it comes to websites. They provide structure and tools that have been predefined to get you focussed on the layout and content of the site rather than the CSS and HTML (although these are very important also) The frameworks we have featured here have their place depending on the project you are working on. If you're only looking for a quick responsive layout then you should try out Gridless, SimpleGrid, or the Gold Grid System. On the other hand, if you're looking for prototyping solutions with buttons, modals, and sliders then you would look at something like Foundation, Less Framework, or Twitter Bootstrap. While Frameworks can give you a huge step up in getting started with your site, after all, we used Zurb's Foundation to get the Alpha version of this site running, you should take some time to ask yourself should I use a responsive framework for my site.
+
+Images
+Responsive images are one of the most hotly discussed topics. These responsive image tools allow you to take advantage of the existing implementations and polyfills.
+
+Javascript
+Responsive design is still coming of age and not all browsers will support all techniques. Javascript shims and polyfills will help plug the gaps where some techniques are natively supported. The most basic of examples is Respond.js which acts as a polyfill for IE8 and lower. Respond.js enables media queries for older versions of IE8 and can save hundreds of hours trying to code another IE8 version that would otherwise be a mobile first linear layout. With the responsive images problem that we are facing today, we can include javascript so that we are able to tackle the issue with libraries like jQuery Picture, Scott Jehl's Picture Fill. All of our responsive javascript/jQuery recommendations are contained in this section, however, they will also appear in areas more specific to what they are built for (jQuery Picture will also be in the images section for example).
+
+Layouts
+A flexible grid based design is the starting point for any responsive design, and these tools can help you get one up and running quickly and guide you in the right direction.
+
+Presentations
+Presentations are a great way to learn quickly from professionals that have already done the hard work for you. Check out the pick of the bunch and get learning immediately.
+
+Software
+Aside from your regular text editor there aren't too many things that you need to build responsive websites. There are some tools that make life infinitely more simple and let's face it, who doesn't want to make their life easier.
+
+Tabular Data
+Tabular data is usually displayed in a fixed format and requires a large viewport to read the data and understand the context, turning the data into information. When it comes to responsive design this type of content does not translate as easily on small screens using flexible percentage based columns, instead we need to manipulate this data with javascript so that it can still be understood. These tips and tools will help you manipulate the tables to ensure your data is still understood, but you can also read about some techniques on displaying tabular data with additional content instead of javascript
+
+Testing
+Testing your website before launch is always important, but when it comes to websites built responsively the complexity of testing in compounded. When testing your responsive site before launch you should test across all of the major devices, and browsers, but also look at tools like Ish that will help you view random viewports (you never know what the next popular viewport will be). Device testing is always the preferred option, and there are more and more device testing labs popping up around the world. When devices are not an option there are other approaches you can use like emulators or getting a subscription to Browser Stack. When deciding on you base test devices/viewports you should make your decisions based on your existing website traffic.
+
+Tutorials
+Getting started with responsive design can be difficult. That's why we have cherry-picked some of the better responsive tutorials to get you up and running or to round off your site with some more advanced techniques.
+
+Typography
+Typography is where your design begins, so it is important to ensure that it responds responsibly. With 95% of the web made up from type it's important to get it right. These tools help you extend your typographic design abilities with responsive design.
+
+Videos
+If you're more of a visual person then kick back in your chair (or couch) and enjoy these presentations.

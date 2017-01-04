@@ -1,0 +1,4421 @@
+/*
+Theme Name: RWD.IS
+Theme URI: http://underscores.me/
+Author: Underscores.me
+Author URI: http://underscores.me/
+Description: Description
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: rwd-is
+Tags:
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+RWD.IS is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize
+# Typography
+# Elements
+# Forms
+# Navigation
+	## Links
+	## Menus
+# Accessibility
+# Alignments
+# Clearings
+# Widgets
+# Content
+	## Posts and pages
+	## Comments
+# Infinite scroll
+# Media
+	## Captions
+	## Galleries
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+html {
+	font-family: sans-serif;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust:     100%;
+}
+
+body {
+	margin: 0;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
+	display: block;
+}
+
+audio,
+canvas,
+progress,
+video {
+	display: inline-block;
+	vertical-align: baseline;
+}
+
+audio:not([controls]) {
+	display: none;
+	height: 0;
+}
+
+[hidden],
+template {
+	display: none;
+}
+
+a {
+	background-color: transparent;
+}
+
+a:active,
+a:hover {
+	outline: 0;
+}
+
+abbr[title] {
+	border-bottom: 1px dotted;
+}
+
+b,
+strong {
+	font-weight: bold;
+}
+
+dfn {
+	font-style: italic;
+}
+
+h1 {
+	font-size: 2em;
+	margin: 0.67em 0;
+}
+
+mark {
+	background: #ff0;
+	color: #000;
+}
+
+small {
+	font-size: 80%;
+}
+
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sup {
+	top: -0.5em;
+}
+
+sub {
+	bottom: -0.25em;
+}
+
+img {
+	border: 0;
+}
+
+svg:not(:root) {
+	overflow: hidden;
+}
+
+figure {
+	margin: 1em 40px;
+}
+
+hr {
+	box-sizing: content-box;
+	height: 0;
+}
+
+pre {
+	overflow: auto;
+}
+
+code,
+kbd,
+pre,
+samp {
+	font-family: monospace, monospace;
+	font-size: 1em;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+	color: inherit;
+	font: inherit;
+	margin: 0;
+}
+
+button {
+	overflow: visible;
+}
+
+button,
+select {
+	text-transform: none;
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	-webkit-appearance: button;
+	cursor: pointer;
+}
+
+button[disabled],
+html input[disabled] {
+	cursor: default;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+
+input {
+	line-height: normal;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+	box-sizing: border-box;
+	padding: 0;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+	height: auto;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+	-webkit-appearance: none;
+}
+
+fieldset {
+	border: 1px solid #c0c0c0;
+	margin: 0 2px;
+	padding: 0.35em 0.625em 0.75em;
+}
+
+legend {
+	border: 0;
+	padding: 0;
+}
+
+textarea {
+	overflow: auto;
+}
+
+optgroup {
+	font-weight: bold;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+td,
+th {
+	padding: 0;
+}
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+body,
+button,
+input,
+select,
+textarea {
+	color: #404040;
+	font-family: sans-serif;
+	font-size: 16px;
+	font-size: 1rem;
+	line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	clear: both;
+}
+
+p {
+	margin-bottom: 1.5em;
+}
+
+dfn,
+cite,
+em,
+i {
+	font-style: italic;
+}
+
+blockquote {
+	margin: 0 1.5em;
+}
+
+address {
+	margin: 0 0 1.5em;
+}
+
+pre {
+	background: #eee;
+	font-family: "Courier 10 Pitch", Courier, monospace;
+	font-size: 15px;
+	font-size: 0.9375rem;
+	line-height: 1.6;
+	margin-bottom: 1.6em;
+	max-width: 100%;
+	overflow: auto;
+	padding: 1.6em;
+}
+
+code,
+kbd,
+tt,
+var {
+	font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+	font-size: 15px;
+	font-size: 0.9375rem;
+}
+
+abbr,
+acronym {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+
+mark,
+ins {
+	background: #fff9c0;
+	text-decoration: none;
+}
+
+big {
+	font-size: 125%;
+}
+
+/*--------------------------------------------------------------
+# Elements
+--------------------------------------------------------------*/
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+	box-sizing: inherit;
+}
+
+body {
+	background: #fff; /* Fallback for when there is no custom background color defined. */
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: "";
+}
+
+blockquote,
+q {
+	quotes: "" "";
+}
+
+hr {
+	background-color: #ccc;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5em;
+}
+
+ul,
+ol {
+	margin: 0 0 1.5em 3em;
+}
+
+ul {
+	list-style: disc;
+}
+
+ol {
+	list-style: decimal;
+}
+
+li > ul,
+li > ol {
+	margin-bottom: 0;
+	margin-left: 1.5em;
+}
+
+dt {
+	font-weight: bold;
+}
+
+dd {
+	margin: 0 1.5em 1.5em;
+}
+
+img {
+	height: auto; /* Make sure images are scaled correctly. */
+	max-width: 100%; /* Adhere to container width. */
+}
+
+table {
+	margin: 0 0 1.5em;
+	width: 100%;
+}
+
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+	color: #666;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	padding: 3px;
+}
+
+select {
+	border: 1px solid #ccc;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="range"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="time"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="color"]:focus,
+textarea:focus {
+	color: #111;
+}
+
+textarea {
+	width: 100%;
+}
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Links
+--------------------------------------------------------------*/
+a {
+	color: royalblue;
+}
+
+a:visited {
+	color: purple;
+}
+
+a:hover,
+a:focus,
+a:active {
+	color: midnightblue;
+}
+
+a:focus {
+	outline: thin dotted;
+}
+
+a:hover,
+a:active {
+	outline: 0;
+}
+
+/*--------------------------------------------------------------
+## Menus
+--------------------------------------------------------------*/
+.main-navigation {
+	clear: both;
+	display: block;
+	float: left;
+	width: 100%;
+}
+
+.main-navigation ul {
+	display: none;
+	list-style: none;
+	margin: 0;
+	padding-left: 0;
+}
+
+.main-navigation li {
+	float: left;
+	position: relative;
+}
+
+.main-navigation a {
+	display: block;
+	text-decoration: none;
+}
+
+.main-navigation ul ul {
+	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+	float: left;
+	position: absolute;
+	top: 1.5em;
+	left: -999em;
+	z-index: 99999;
+}
+
+.main-navigation ul ul ul {
+	left: -999em;
+	top: 0;
+}
+
+.main-navigation ul ul a {
+	width: 200px;
+}
+
+.main-navigation ul ul li {
+
+}
+
+.main-navigation li:hover > a,
+.main-navigation li.focus > a {
+}
+
+.main-navigation ul ul :hover > a,
+.main-navigation ul ul .focus > a {
+}
+
+.main-navigation ul ul a:hover,
+.main-navigation ul ul a.focus {
+}
+
+.main-navigation ul li:hover > ul,
+.main-navigation ul li.focus > ul {
+	left: auto;
+}
+
+.main-navigation ul ul li:hover > ul,
+.main-navigation ul ul li.focus > ul {
+	left: 100%;
+}
+
+.main-navigation .current_page_item > a,
+.main-navigation .current-menu-item > a,
+.main-navigation .current_page_ancestor > a,
+.main-navigation .current-menu-ancestor > a {
+}
+
+/* Small menu. */
+.menu-toggle,
+.main-navigation.toggled ul {
+	display: block;
+}
+
+@media screen and (min-width: 37.5em) {
+	.menu-toggle {
+		display: none;
+	}
+	.main-navigation ul {
+		display: block;
+	}
+}
+
+.site-main .comment-navigation,
+.site-main .posts-navigation,
+.site-main .post-navigation {
+	margin: 0 0 1.5em;
+	overflow: hidden;
+}
+
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous {
+	float: left;
+	width: 50%;
+}
+
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
+	float: right;
+	text-align: right;
+	width: 50%;
+}
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar. */
+}
+
+/* Do not show the outline on the skip link target. */
+#content[tabindex="-1"]:focus {
+	outline: 0;
+}
+
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+}
+
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/*--------------------------------------------------------------
+# Clearings
+--------------------------------------------------------------*/
+.clear:before,
+.clear:after,
+.entry-content:before,
+.entry-content:after,
+.comment-content:before,
+.comment-content:after,
+.site-header:before,
+.site-header:after,
+.site-content:before,
+.site-content:after,
+.site-footer:before,
+.site-footer:after {
+	content: "";
+	display: table;
+	table-layout: fixed;
+}
+
+.clear:after,
+.entry-content:after,
+.comment-content:after,
+.site-header:after,
+.site-content:after,
+.site-footer:after {
+	clear: both;
+}
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+.widget {
+	margin: 0 0 1.5em;
+}
+
+/* Make sure select elements fit in widgets. */
+.widget select {
+	max-width: 100%;
+}
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+## Posts and pages
+--------------------------------------------------------------*/
+.sticky {
+	display: block;
+}
+
+.hentry {
+	margin: 0 0 1.5em;
+}
+
+.byline,
+.updated:not(.published) {
+	display: none;
+}
+
+.single .byline,
+.group-blog .byline {
+	display: inline;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+	margin: 1.5em 0 0;
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+/*--------------------------------------------------------------
+## Comments
+--------------------------------------------------------------*/
+.comment-content a {
+	word-wrap: break-word;
+}
+
+.bypostauthor {
+	display: block;
+}
+
+/*--------------------------------------------------------------
+# Infinite scroll
+--------------------------------------------------------------*/
+/* Globally hidden elements when Infinite Scroll is supported and in use. */
+.infinite-scroll .posts-navigation, /* Older / Newer Posts Navigation (always hidden) */
+.infinite-scroll.neverending .site-footer { /* Theme Footer (when set to scrolling) */
+	display: none;
+}
+
+/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
+.infinity-end.neverending .site-footer {
+	display: block;
+}
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+/*--------------------------------------------------------------
+## Captions
+--------------------------------------------------------------*/
+.wp-caption {
+	margin-bottom: 1.5em;
+	max-width: 100%;
+}
+
+.wp-caption img[class*="wp-image-"] {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption .wp-caption-text {
+	margin: 0.8075em 0;
+}
+
+.wp-caption-text {
+	text-align: center;
+}
+/**
+ * Core
+ */
+/*------------------------------------*\
+    $FRAMEWORK
+\*------------------------------------*/
+/**
+ * Consistent spacing units
+ * ------------------------------//
+ */
+/**
+ * Enable old IE support for components
+ * ------------------------------//
+ */
+/**
+ * Enable components
+ * ------------------------------//
+ */
+/**
+ * Colors
+ * ----------------------------------------//
+ */
+/**
+ * Set project brand variables first. These can then be included in the color map.
+ * Details of how to use the color map can be found here: https://medium.com/p/clean-colour-management-with-sass-4d5e9bb4f1b2
+ */
+/**
+ * Config
+ */
+/*------------------------------------*\
+    $PROJECT
+\*------------------------------------*/
+/**
+ * Aliases
+ */
+/**
+ * Components
+ * ----------------------------------------//
+ */
+/**
+ * Typography
+ * ----------------------------------------//
+ */
+/**
+ * Typescale
+ * ------------------------------//
+ */
+/**
+ * Grid
+ * ----------------------------------------//
+ */
+/*------------------------------------*\
+    $COLORS
+\*------------------------------------*/
+/**
+ * Set project brand variables first. These can then be included in the color map.
+ * Details of how to use the color map can be found here: https://medium.com/p/clean-colour-management-with-sass-4d5e9bb4f1b2
+ */
+/*------------------------------------*\
+    $GLOBALS
+\*------------------------------------*/
+/**
+ * Framework
+ */
+/**
+ * Context Calculator
+ * -------------------------------------//
+ * Divide a given font-size by base font-size & return a relative value
+ */
+/**
+ * Color
+ * -------------------------------------//
+ * Clean helper for handling the color maps
+ */
+/**
+ * Globals
+ * -------------------------------------//
+ * Clean helper for handling the global map
+ */
+/**
+ * Placeholder
+ * ----------------------------------------//
+ */
+/*------------------------------------*\
+    $UTILS
+\*------------------------------------*/
+/**
+ * Clearfix
+ */
+.cf:after, .grid-row:after, .island:after,
+.islet:after, .nav:after, .grid__row:after, .resource__body:after, .resource--two-column .resource__link:after, .resource--two-column .resource__column:after, .resource--post .resource__image a:after, .resource--wide:after, .podcast-banner:after, .welcome:after, .section-summaries:after, .section-summaries__item:after, .subscription-form:after, .search-form:after, .meta-block:after, .site-header--compact:after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+/**
+ * JS
+ */
+.js-hidden {
+  display: none;
+}
+
+.js-toggle {
+  cursor: pointer;
+}
+
+/**
+ * Screen-readers only
+ */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/*------------------------------------*\
+    $TYPOGRAPHY COMPONENT
+\*------------------------------------*/
+/**
+ * Default font stacks
+ * ------------------------------//
+ */
+/**
+ * Font stack weights
+ * -----------------------------//
+ * Override with weights provided by the font service.
+ * Some fonts use different wording for different weights
+ * for example "medium" or "book". These are usually instead
+ * of "regular" so seens as we're abstracting the font-stack
+ * usage here it's advised to use the weight names listed here.
+ */
+/**
+ * Once you specified your font-stacks and weights
+ * add them to these map variables
+ */
+/**
+ * Font faces
+ * ------------------------------//
+ * If you're including fonts via @font-face
+ * declare their weights and font files in a list against
+ * their corresponding type face e.g.:
+
+ $sans-serif-faces: "regular", "StRyde-Regular",
+                    "medium", "StRyde-Medium",
+                    "bold", "StRyde-Bold";
+
+ * Usage:
+
+ @include font-face("medium", "sans-serif");
+
+ */
+/**
+ * Base font-family
+ * ------------------------------//
+ */
+/**
+ * Base sizing
+ * ------------------------------//
+ */
+/**
+ * Small print
+ * ------------------------------//
+ */
+/**
+ * Typescale
+ * ------------------------------//
+ */
+/**
+ * Typescale unit
+ */
+/**
+ * Paragraphs
+ * ------------------------------//
+ */
+/**
+ * Paragraph Styling Boolean
+ * -----------------------------//
+ * 'false' - no vertical whitespace between subsequent paragraphs.
+ * 'true' - vertical whitespace between subsequent paragraphs.
+ */
+/**
+ * Smallcaps
+ * ------------------------------//
+ */
+/**
+ * Dropcaps
+ * ------------------------------//
+ */
+/**
+ * Quotes
+ * ------------------------------//
+ */
+/**
+ * Font stack mixin
+ * -----------------------------//
+ * This mixin abstracts out font family, style and weight declarations
+ * so you can use font types (serif, sans-serif etc) instead of font
+ * names e.g.
+
+ @include font-stack(); //Use default values
+
+ @include font-stack("bold", "serif", "normal")
+
+ * Becomes:
+
+ font-family: "Verdana", sans-serif;
+ font-style: normal;
+ font-weight: 400;
+
+ font-family: "Georgia", serif;
+ font-style: normal;
+ font-weight: 700;
+
+ * The mixin is setup to only apply styles that differ from the base
+ * styles. To override this behaviour there's a force option we
+ * can be set to true.
+ *
+ * Credit: http://nodivide.us/ - Ryan Taylor
+ */
+/**
+ * Wordwrap placeholder classes
+ * -------------------------------------//
+ * normal: Indicates that lines may only break at normal word break points.
+ * break-word : Indicates that normally unbreakable words may be broken at
+ * arbitrary points if there are no otherwise acceptable break points in the line.
+ */
+pre code {
+  word-wrap: normal;
+}
+
+/**
+ * Measure Margin
+ * -------------------------------------//
+ * Divide 1 unit of measure by given font-size & return a relative em value
+ */
+/**
+ * Type-Scale
+ * -------------------------------------//
+ */
+/**
+ * Hyphens
+ * -------------------------------------//
+ * http://trentwalton.com/2011/09/07/css-hyphenation
+ */
+/**
+ * Smallcaps
+ * -------------------------------------//
+ * http://blog.hypsometry.com/articles/true-small-capitals-with-font-face
+ * ISSUE #1 : https://github.com/typeplate/typeplate.github.com/issues/1
+ */
+/**
+ * Dropcaps
+ * -------------------------------------//
+ */
+/*
+ * Codeblocks
+ * -------------------------------------//
+ */
+/**
+ * Blockquote
+ * -------------------------------------//
+ * Use our pre-defined markup and add a class
+ * to your custom blockquote element.
+ * For example:
+ *
+ * .blockquote { @include blockquote("-"); }
+ *
+ * "-" is your citation flourish. For example:
+ *
+ * I always say important things because I'm so smart
+ *                           - Super Important Person
+ */
+.blockquote + figcaption {
+  display: block;
+  font-size: inherit;
+  text-align: right;
+}
+
+/**
+ * Pull-Quotes
+ * -------------------------------------//
+ */
+/**
+ * Definition-Lists
+ * -------------------------------------//
+ * lining
+ * http://lea.verou.me/2012/02/flexible-multiline-definition-lists-with-2-lines-of-css
+ *
+ * dictionary-style
+ * http://lea.verou.me/2012/02/flexible-multiline-definition-lists-with-2-lines-of-css
+ */
+/*------------------------------------*\
+    $TYPOGRAPHY
+\*------------------------------------*/
+/**
+ * We're using a modified version of Typeplate (http://typeplate.com)
+ *
+ * Typography can be controlled through variables in _project.scss. Copy
+ * the defaults in _defaults.scss as a starting point.
+ */
+html {
+  font-family: sans-serif;
+  font-weight: regular;
+  font-size: 87.5%;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  color: rgba(0, 0, 0, 0.45);
+}
+
+small {
+  font-size: 65%;
+}
+
+html,
+input,
+textarea,
+button {
+  /**
+   * Force apply font-family, font-style, font-weight
+   */
+  font-family: "adelle-sans", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+/**
+ * Headings
+ * -------------------------------------//
+ * Extend included classes on any element of your
+ * choosing for adjusting type based on the scale
+ * provided.
+ * Special Props to Harry Roberts for this trick.
+ *
+ * For example:
+ *
+ * <h6 class="giga">Awesome Headline</h6>
+ * <p class="tera">a story about a dude</p>
+ *
+ * Our Type Scale is as follows with px fallbacks
+ * for IE 6-8 as they do not understand REM units.
+ *
+ * 18, 21, 24, 36, 48, 60, 72, 90, 117
+ */
+h1, h2, h3, h4, h5, h6 {
+  text-rendering: optimizeLegibility;
+  line-height: 1;
+  margin-top: 0;
+}
+
+/**
+ * Multi-dimensional array, where:
+ * the first value is the name of the class
+ * and the second value is the variable for the size
+ */
+/**
+ * Sass loop to associate h1-h6 tags with their appropriate greek
+ * heading based on a modular scale.
+ * for each size in the scale, create a class
+ */
+.tera {
+  font-size: 90px;
+  font-size: 6.42857rem;
+  margin-bottom: 3.59333px;
+  margin-bottom: 0.25667rem;
+}
+
+.giga, .welcome__title {
+  font-size: 50px;
+  font-size: 3.57143rem;
+  margin-bottom: 6.468px;
+  margin-bottom: 0.462rem;
+}
+
+.mega {
+  font-size: 50px;
+  font-size: 3.57143rem;
+  margin-bottom: 6.468px;
+  margin-bottom: 0.462rem;
+}
+
+.alpha, h1 {
+  font-size: 38px;
+  font-size: 2.71429rem;
+  margin-bottom: 8.51053px;
+  margin-bottom: 0.60789rem;
+}
+
+.beta, h2 {
+  font-size: 30px;
+  font-size: 2.14286rem;
+  margin-bottom: 10.78px;
+  margin-bottom: 0.77rem;
+}
+
+.gamma, h3 {
+  font-size: 24px;
+  font-size: 1.71429rem;
+  margin-bottom: 13.475px;
+  margin-bottom: 0.9625rem;
+}
+
+.delta, h4 {
+  font-size: 21px;
+  font-size: 1.5rem;
+  margin-bottom: 15.4px;
+  margin-bottom: 1.1rem;
+}
+
+.epsilon, h5 {
+  font-size: 16px;
+  font-size: 1.14286rem;
+  margin-bottom: 20.2125px;
+  margin-bottom: 1.44375rem;
+}
+
+.zeta, h6 {
+  font-size: 14px;
+  font-size: 1rem;
+  margin-bottom: 23.1px;
+  margin-bottom: 1.65rem;
+}
+
+/**
+ * Associate h1-h6 tags with their appropriate greek heading
+ */
+/**
+ * Set heading color
+ */
+h1, h2, h3, h4, h5, h6 {
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  -o-hyphens: none;
+  hyphens: none;
+  color: #000000;
+}
+
+/**
+ * Paragraphs
+ * -------------------------------------//
+ */
+p {
+  margin: auto auto 1.5em;
+}
+
+p + .drop-cap {
+  text-indent: 0;
+  margin-top: 0;
+}
+
+.drop-cap:first-letter {
+  float: left;
+  margin: 0;
+  padding: 0 0.3em 0 0;
+  font-size: 4em;
+  font-family: inherit;
+  line-height: 1;
+  text-indent: 0;
+  background: transparent;
+  color: inherit;
+}
+
+/**
+ * Anchors
+ * -------------------------------------//
+ */
+a {
+  color: #CC4E46;
+}
+a[href]:hover, a[href]:focus {
+  color: #000000;
+}
+a:visited {
+  color: #CC4E46;
+}
+
+/**
+ * Avoid Hyphenation
+ * -------------------------------------//
+ * http://meyerweb.com/eric/thoughts/2012/12/17/where-to-avoid-css-hyphenation
+ */
+abbr,
+acronym,
+blockquote,
+code,
+dir,
+kbd,
+listing,
+plaintext,
+q,
+samp,
+tt,
+var,
+xmp {
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  -o-hyphens: none;
+  hyphens: none;
+}
+
+/**
+ * Smallcaps
+ * -------------------------------------//
+ * Abbreviations Markup
+ *
+	<abbr title="hyper text markup language">HMTL</abbr>
+ *
+ * Extend this object into your markup.
+ */
+abbr {
+  font-variant: small-caps;
+  font-weight: 600;
+  text-transform: lowercase;
+  color: gray;
+}
+abbr[title]:hover {
+  cursor: help;
+}
+
+/**
+ * Codeblocks
+ * -------------------------------------//
+ */
+pre code {
+  white-space: -moz-pre-wrap;
+  white-space: pre-wrap;
+}
+
+pre {
+  white-space: pre;
+}
+
+code {
+  white-space: pre;
+  font-family: monospace;
+}
+
+/*
+	<ol class="line-numbers">
+		<li><code>h1 {</code></li>
+		<li><code>  background: red;</code></li>
+		<li><code>  color: blue;</code></li>
+		<li><code>  padding: 1em;</code></li>
+		<li><code>  margin: 3em;</code></li>
+		<li><code>  border: 2px solid black;</code></li>
+		<li><code>}</code></li>
+	</ol>
+ */
+.line-numbers {
+  font-family: monospace;
+  margin: 0 0 0 2em;
+  padding: 0;
+}
+
+/**
+ * Figures
+ */
+figure img {
+  margin: 0;
+}
+
+figcaption {
+  font-style: italic;
+}
+figcaption strong {
+  font-style: normal;
+}
+
+/**
+ * Images
+ */
+img {
+  max-width: 100%;
+}
+
+img,
+img[align=left] {
+  margin: 0 26px 13px 0;
+}
+
+img[align=middle] {
+  display: block;
+  margin: 0 auto 26px;
+}
+
+img[align=right] {
+  margin: 0 0 13px 26px;
+}
+
+/**
+ * Quotes
+ */
+.blockquote p:last-of-type {
+  margin-bottom: -0.825em;
+}
+.blockquote + figcaption:before {
+  content: "~";
+}
+.blockquote p {
+  font-style: italic;
+}
+.blockquote p:last-of-type {
+  margin-bottom: 0;
+}
+
+.pull-quote {
+  position: relative;
+  padding: 1em;
+}
+.pull-quote :first-child,
+.pull-quote :last-child {
+  position: relative;
+}
+.pull-quote :first-child:before,
+.pull-quote :last-child:after {
+  height: 1em;
+  opacity: 0.5;
+  position: absolute;
+  font-size: 4rem;
+  color: #000000;
+  text-indent: 0;
+  width: 0.5em;
+}
+.pull-quote :first-child {
+  text-indent: 1em;
+}
+.pull-quote :first-child:before {
+  content: '“';
+  top: -0.5em;
+  left: -0.1em;
+}
+.pull-quote :last-child:after {
+  content: '”';
+  bottom: -0.1em;
+}
+.pull-quote p {
+  font-style: italic;
+}
+
+/**
+ * Definition lists
+ * -------------------------------------//
+/**
+ * Lining Definition Style Markup
+ *
+	<dl class="lining">
+		<dt><b></b></dt>
+		<dd></dd>
+	</dl>
+ *
+ * Extend this object into your markup.
+ */
+.dl--lining-style dt,
+.dl--lining-style dd {
+  display: inline;
+  margin: 0;
+}
+.dl--lining-style dt + dt:before,
+.dl--lining-style dd + dt:before {
+  content: "\A";
+  white-space: pre;
+}
+.dl--lining-style dd + dd:before {
+  content: ", ";
+}
+.dl--lining-style dd:before {
+  content: ": ";
+  margin-left: -0.2rem;
+}
+
+/**
+ * Dictionary Definition Style Markup
+ *
+	<dl class="dictionary-style">
+		<dt><b></b></dt>
+			<dd></dd>
+	</dl>
+ *
+ * Extend this object into your markup.
+ */
+.dl--dictionary-style dt {
+  display: inline;
+  counter-reset: definitions;
+}
+.dl--dictionary-style dt + dt:before {
+  content: ", ";
+  margin-left: -0.2rem;
+}
+.dl--dictionary-style dd {
+  display: block;
+  counter-increment: definitions;
+}
+.dl--dictionary-style dd:before {
+  content: counter(definitions,decimal) ". ";
+}
+
+/**
+ * Tables
+ */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 26px;
+}
+
+table th, table td {
+  padding: 13px;
+  text-align: left;
+}
+
+table td {
+  vertical-align: top;
+  border-top: solid 1px #CCCCCC;
+}
+
+table th {
+  font-weight: bold;
+  vertical-align: middle;
+}
+
+/**
+ * Condensed table
+ */
+.table--condensed th, .table--condensed td {
+  padding: 6.5px;
+}
+
+/**
+ * Bordered table
+ */
+.table--bordered {
+  border-collapse: separate;
+  border: solid 1px #CCCCCC;
+}
+
+.table--bordered th + th,
+.table--bordered th + td,
+.table--bordered td + td {
+  border-left: solid 1px #CCCCCC;
+}
+
+/**
+ * Stripped table
+ */
+.table--stripped tbody tr:nth-child(odd) td,
+.table--stripped tbody tr:nth-child(odd) th {
+  background: #F5F5F5;
+}
+
+/*------------------------------------*\
+    $FLAG
+\*------------------------------------*/
+/**
+ * A simply flag component to allow you to vertically
+ * align content.
+ *
+   <header class="flag">
+
+       <div class="flag__item">
+           ... Some image ...
+       </div>
+       <div class="flag__item">
+           ... Some content ...
+       </div>
+
+   </header>
+ */
+.flag {
+  display: table;
+  width: 100%;
+}
+
+.flag__item {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+/*------------------------------------*\
+    $GRID COMPONENT DEFAULTS
+\*------------------------------------*/
+/*------------------------------------*\
+    $GRID MIXINS
+\*------------------------------------*/
+/**
+ * Set Gutter
+ * -------------------------------------//
+ */
+/**
+ * Grid Config
+ * -------------------------------------//
+ */
+/**
+ * Grid Setup
+ * -------------------------------------//
+ * Set the proportions you want to use $namespace relates to the class prefix
+ * e.g. bp2-col to target breakpoint 2
+ */
+/**
+ * Grid Init
+ * -------------------------------------//
+ * Include grids-init to set up your grids with your base class
+ * i.e. @include grids-init("col");
+ */
+/**
+ * Grid Include
+ * -------------------------------------//
+ * Include grids-include with your class for each breakpoint
+ * e.g. @include respond-min(30em) { @include grid-include("bp1-col"); }
+ */
+/**
+ * Account for no border-box in IE8/7/6
+ */
+/**
+ * Amend widths slightly for IE8/7/6
+ */
+/**
+ * Media Query
+ * -------------------------------------//
+ */
+/*------------------------------------*\
+    $GRID
+\*------------------------------------*/
+* {
+  box-sizing: border-box;
+}
+
+/**
+ * We're using a heavily modified version of Matt Berridge's
+ * Proportional Grid (http://builtbyboon.com/blog/proportional-grids).
+ *
+ * This grid system (including it's breakpoints) can be controlled through
+ * variables in _project.scss. Copy the defaults in _defaults.scss as a
+ * starting point.
+ */
+.grid-container {
+  padding-left: 27px;
+  padding-left: 1.92857rem;
+  padding-right: 27px;
+  padding-right: 1.92857rem;
+  margin: 0 auto;
+  max-width: 100%;
+}
+@media only screen and (min-width: 30em) {
+  .grid-container {
+    padding-left: 54px;
+    padding-left: 3.85714rem;
+    padding-right: 54px;
+    padding-right: 3.85714rem;
+  }
+}
+
+.grid-row {
+  margin-left: -27px;
+  margin-left: -1.92857rem;
+  position: relative;
+}
+.grid-row .grid-col {
+  padding-left: 27px;
+  padding-left: 1.92857rem;
+}
+@media only screen and (min-width: 30em) {
+  .grid-row {
+    margin-left: -54px;
+    margin-left: -3.85714rem;
+  }
+  .grid-row .grid-col {
+    padding-left: 54px;
+    padding-left: 3.85714rem;
+  }
+}
+
+.grid-col {
+  float: left;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.large-gutter {
+  margin-left: -108px;
+  margin-left: -7.71429rem;
+}
+.large-gutter .grid-col {
+  padding-left: 108px;
+  padding-left: 7.71429rem;
+}
+
+.half-gutter {
+  margin-left: -27px;
+  margin-left: -1.92857rem;
+}
+.half-gutter .grid-col {
+  padding-left: 27px;
+  padding-left: 1.92857rem;
+}
+
+.no-gutter {
+  margin-left: 0px;
+  margin-left: -0rem;
+}
+.no-gutter .grid-col {
+  padding-left: 0px;
+  padding-left: 0rem;
+}
+
+.reset-gutter {
+  margin-left: -54px;
+  margin-left: -3.85714rem;
+}
+.reset-gutter .grid-col {
+  padding-left: 54px;
+  padding-left: 3.85714rem;
+}
+
+ul.grid-row,
+ol.grid-row {
+  padding-left: 0;
+  list-style: none;
+}
+
+li.grid-col {
+  margin-left: 0;
+  margin-bottom: 0;
+}
+
+.col-full,
+.col-set-full .grid-col {
+  width: 100%;
+}
+
+.col-one-half,
+.col-set-one-half .grid-col {
+  width: 50%;
+}
+
+.col-one-third,
+.col-set-one-third .grid-col {
+  width: 33.333%;
+}
+
+.col-one-quarter,
+.col-set-one-quarter .grid-col {
+  width: 25%;
+}
+
+.col-two-thirds {
+  width: 66.666%;
+}
+
+.col-three-quarters {
+  width: 75%;
+}
+
+.col-centered {
+  float: none;
+  margin: 0 auto;
+}
+
+/**
+ * Generate breakpoint grid styles
+ */
+@media only screen and (min-width: 30em) {
+  .bp1-col-full,
+  .bp1-col-set-full .grid-col {
+    width: 100%;
+  }
+
+  .bp1-col-one-half,
+  .bp1-col-set-one-half .grid-col {
+    width: 50%;
+  }
+
+  .bp1-col-one-third,
+  .bp1-col-set-one-third .grid-col {
+    width: 33.333%;
+  }
+
+  .bp1-col-one-quarter,
+  .bp1-col-set-one-quarter .grid-col {
+    width: 25%;
+  }
+
+  .bp1-col-two-thirds {
+    width: 66.666%;
+  }
+
+  .bp1-col-three-quarters {
+    width: 75%;
+  }
+
+  .bp1-col-centered {
+    float: none;
+    margin: 0 auto;
+  }
+}
+@media only screen and (min-width: 48em) {
+  .bp2-col-full,
+  .bp2-col-set-full .grid-col {
+    width: 100%;
+  }
+
+  .bp2-col-one-half,
+  .bp2-col-set-one-half .grid-col {
+    width: 50%;
+  }
+
+  .bp2-col-one-third,
+  .bp2-col-set-one-third .grid-col {
+    width: 33.333%;
+  }
+
+  .bp2-col-one-quarter,
+  .bp2-col-set-one-quarter .grid-col {
+    width: 25%;
+  }
+
+  .bp2-col-two-thirds {
+    width: 66.666%;
+  }
+
+  .bp2-col-three-quarters {
+    width: 75%;
+  }
+
+  .bp2-col-centered {
+    float: none;
+    margin: 0 auto;
+  }
+}
+@media only screen and (min-width: 60em) {
+  .bp3-col-full,
+  .bp3-col-set-full .grid-col {
+    width: 100%;
+  }
+
+  .bp3-col-one-half,
+  .bp3-col-set-one-half .grid-col {
+    width: 50%;
+  }
+
+  .bp3-col-one-third,
+  .bp3-col-set-one-third .grid-col {
+    width: 33.333%;
+  }
+
+  .bp3-col-one-quarter,
+  .bp3-col-set-one-quarter .grid-col {
+    width: 25%;
+  }
+
+  .bp3-col-two-thirds {
+    width: 66.666%;
+  }
+
+  .bp3-col-three-quarters {
+    width: 75%;
+  }
+
+  .bp3-col-centered {
+    float: none;
+    margin: 0 auto;
+  }
+}
+@media only screen and (min-width: 90em) {
+  .bp4-col-full,
+  .bp4-col-set-full .grid-col {
+    width: 100%;
+  }
+
+  .bp4-col-one-half,
+  .bp4-col-set-one-half .grid-col {
+    width: 50%;
+  }
+
+  .bp4-col-one-third,
+  .bp4-col-set-one-third .grid-col {
+    width: 33.333%;
+  }
+
+  .bp4-col-one-quarter,
+  .bp4-col-set-one-quarter .grid-col {
+    width: 25%;
+  }
+
+  .bp4-col-two-thirds {
+    width: 66.666%;
+  }
+
+  .bp4-col-three-quarters {
+    width: 75%;
+  }
+
+  .bp4-col-centered {
+    float: none;
+    margin: 0 auto;
+  }
+}
+/*------------------------------------*\
+    $ICONS COMPONENT
+\*------------------------------------*/
+/*------------------------------------*\
+    $ICONS - MIXINS
+\*------------------------------------*/
+/*------------------------------------*\
+    $ISLAND
+\*------------------------------------*/
+/**
+ * Simple, boxed off content, as per: csswizardry.com/2011/10/the-island-object
+ * E.g.:
+ *
+   <div class=island>
+       I am boxed off.
+   </div>
+ */
+.island,
+.islet {
+  display: block;
+}
+
+.island {
+  padding: 26px;
+}
+
+.island > :last-child,
+.islet > :last-child {
+  margin-bottom: 0;
+}
+
+/**
+ * Just like `.island`, only smaller.
+ */
+.islet {
+  padding: 13px;
+}
+
+/*------------------------------------*\
+    $NAV
+\*------------------------------------*/
+/**
+ * When used on an `ol` or `ul`, this class throws the list into horizontal mode
+ * e.g.:
+ *
+    <nav class="nav">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+ *
+ */
+.nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav ul > li,
+.nav ul > li > a {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+}
+
+/**
+ * `.nav--stacked` extends `.nav` and throws the list into vertical mode, e.g.:
+ *
+    <nav class="nav nav--stacked">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+ *
+ */
+.nav--stacked ul > li {
+  display: list-item;
+}
+.nav--stacked ul > li > a {
+  display: block;
+}
+
+/**
+ * `.nav--banner` extends `.nav` and centres the list, e.g.:
+ *
+    <nav class="nav nav--banner">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+ *
+ */
+.nav--banner {
+  text-align: center;
+}
+
+/**
+ * Give nav links a big, blocky hit area. Extends `.nav`, e.g.:
+ *
+    <nav class="nav nav--block">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+ *
+ */
+.nav--block {
+  line-height: 1;
+  /**
+   * Remove whitespace caused by `inline-block`.
+   */
+  word-spacing: -0.43em;
+  white-space: nowrap;
+}
+.nav--block ul > li {
+  letter-spacing: normal;
+  word-spacing: normal;
+}
+.nav--block ul > li > a {
+  padding: 13px;
+}
+
+/**
+ * Force a nav to occupy 100% of the available width of its parent. Extends
+ * `.nav`, e.g.:
+ *
+    <nav class="nav nav--fit">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+ *
+ * Thanks to @pimpl for this idea!
+ */
+.nav--fit ul {
+  display: table;
+  width: 100%;
+}
+.nav--fit ul > li {
+  display: table-cell;
+}
+.nav--fit ul > li > a {
+  display: block;
+}
+
+/**
+ * Make a list of keywords. Extends `.nav`, e.g.:
+ *
+    <nav class="nav nav--keywords">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+ *
+ */
+.nav--keywords ul > li:after {
+  content: "\002C" "\00A0";
+}
+.nav--keywords ul > li:last-child:after {
+  display: none;
+}
+
+/**
+ * Generic
+ */
+/**
+ * Font weights.
+ */
+.regular, .nav--sidebar-menu .nav__title, .section-heading {
+  /**
+   * Force apply font-family, font-style, font-weight
+   */
+  font-family: "adelle-sans", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.regular-italic {
+  /**
+   * Force apply font-family, font-style, font-weight
+   */
+  font-family: "adelle-sans", sans-serif;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.bold, h1, h2, h3, h4, h5, h6, .nav--secondary .nav__link {
+  /**
+   * Force apply font-family, font-style, font-weight
+   */
+  font-family: "adelle-sans", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.bold-italic {
+  /**
+   * Force apply font-family, font-style, font-weight
+   */
+  font-family: "adelle-sans", sans-serif;
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.regular-serif, .section__title, .section-summaries__title, .nav--primary .nav__title, .page-header__title {
+  /**
+   * Force apply font-family, font-style, font-weight
+   */
+  font-family: "eloquent-jf-pro", serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.regular-italic-serif, .welcome__title {
+  /**
+   * Force apply font-family, font-style, font-weight
+   */
+  font-family: "eloquent-jf-pro", serif;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+/**
+ * Text sizes.
+ *
+ * We scale up the type sizes a breakpoint 2.
+ */
+.small-text, input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"], .resource__footer, .resource--small .resource__meta, .resource--small .resource__body, .podcast-banner__title small, .btn, .learn-more, .meta-block .icon, .section-heading, .site-footer__copyright {
+  font-size: 12px;
+  font-size: 0.85714rem;
+  /**
+   * Media query adjustments.
+   */
+}
+@media only screen and (min-width: 48em) {
+  .small-text, input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="password"], .resource__footer, .resource--small .resource__meta, .resource--small .resource__body, .podcast-banner__title small, .btn, .learn-more, .meta-block .icon, .section-heading, .site-footer__copyright {
+    font-size: 14px;
+    font-size: 0.875rem;
+  }
+}
+
+.default-text, .resource--small .resource__title, .nav--social .nav__link, .meta-block {
+  font-size: 14px;
+  font-size: 1rem;
+  /**
+   * Media query adjustments.
+   */
+}
+@media only screen and (min-width: 48em) {
+  .default-text, .resource--small .resource__title, .nav--social .nav__link, .meta-block {
+    font-size: 16px;
+    font-size: 1rem;
+  }
+}
+
+.medium-text, .lead, .resource__title, .entry__body, .entry__body > h5, .entry__body > h6 {
+  font-size: 16px;
+  font-size: 1.14286rem;
+  /**
+   * Media query adjustments.
+   */
+}
+@media only screen and (min-width: 48em) {
+  .medium-text, .lead, .resource__title, .entry__body, .entry__body > h5, .entry__body > h6 {
+    font-size: 18px;
+    font-size: 1.125rem;
+  }
+}
+
+.large-text, .podcast-banner__title, .nav--sidebar-menu .nav__title, .learn-more .icon, .entry__body > h3, .entry__body > h4 {
+  font-size: 18px;
+  font-size: 1.28571rem;
+  /**
+   * Media query adjustments.
+   */
+}
+@media only screen and (min-width: 48em) {
+  .large-text, .podcast-banner__title, .nav--sidebar-menu .nav__title, .learn-more .icon, .entry__body > h3, .entry__body > h4 {
+    font-size: 23px;
+    font-size: 1.4375rem;
+  }
+}
+
+.extra-large-text, .section__title, .section-summaries__title, .nav--primary .nav__title, .page-header__title, .entry__body > h2 {
+  font-size: 21px;
+  font-size: 1.5rem;
+  /**
+   * Media query adjustments.
+   */
+}
+@media only screen and (min-width: 48em) {
+  .extra-large-text, .section__title, .section-summaries__title, .nav--primary .nav__title, .page-header__title, .entry__body > h2 {
+    font-size: 28px;
+    font-size: 1.75rem;
+  }
+}
+
+/**
+ * Alternative anchors.
+ */
+.site-footer__copyright a {
+  color: #000000;
+  text-decoration: none;
+}
+.site-footer__copyright a:hover {
+  color: #CC4E46;
+}
+
+.resource__title a {
+  color: #000000;
+  text-decoration: none;
+}
+.resource__title a:hover {
+  border-bottom: 1px solid #000000;
+  color: #000000;
+}
+
+/**
+ * Soft Break.
+ */
+.soft-br {
+  display: inline;
+  /**
+   * Media query adjustments
+   */
+}
+@media only screen and (min-width: 48em) {
+  .soft-br {
+    display: block;
+  }
+}
+
+/**
+ * Lists.
+ */
+.flatten {
+  list-style: none;
+  padding: 0;
+}
+
+/**
+ * Clearfix
+ */
+.cf:after, .grid-row:after, .island:after,
+.islet:after, .nav:after, .grid__row:after, .resource__body:after, .resource--two-column .resource__link:after, .resource--two-column .resource__column:after, .resource--post .resource__image a:after, .resource--wide:after, .podcast-banner:after, .welcome:after, .section-summaries:after, .section-summaries__item:after, .subscription-form:after, .search-form:after, .meta-block:after, .site-header--compact:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/**
+ * Base
+ */
+html {
+  /**
+   * Media query adjustments
+   */
+}
+@media only screen and (min-width: 48em) {
+  html {
+    font-size: 100%;
+  }
+}
+
+/**
+ * Headings
+ */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  margin-bottom: 13px;
+}
+
+h4, h5, h6 {
+  line-height: 1.6;
+}
+
+/**
+ * Media query adjustments
+ */
+@media only screen and (min-width: 48em) {
+  .tera {
+    font-size: 104px;
+    font-size: 6.5rem;
+    margin-bottom: 3.10962px;
+    margin-bottom: 0.22212rem;
+    margin-bottom: 26px;
+  }
+
+  .giga, .welcome__title {
+    font-size: 88px;
+    font-size: 5.5rem;
+    margin-bottom: 3.675px;
+    margin-bottom: 0.2625rem;
+    margin-bottom: 26px;
+  }
+
+  .mega {
+    font-size: 64px;
+    font-size: 4rem;
+    margin-bottom: 5.05312px;
+    margin-bottom: 0.36094rem;
+    margin-bottom: 26px;
+  }
+
+  .alpha, h1 {
+    font-size: 53px;
+    font-size: 3.3125rem;
+    margin-bottom: 6.10189px;
+    margin-bottom: 0.43585rem;
+    margin-bottom: 26px;
+  }
+
+  .beta, h2 {
+    font-size: 42px;
+    font-size: 2.625rem;
+    margin-bottom: 7.7px;
+    margin-bottom: 0.55rem;
+    margin-bottom: 26px;
+  }
+
+  .gamma, h3 {
+    font-size: 32px;
+    font-size: 2rem;
+    margin-bottom: 10.10625px;
+    margin-bottom: 0.72188rem;
+    margin-bottom: 26px;
+  }
+
+  .delta, h4 {
+    font-size: 21px;
+    font-size: 1.3125rem;
+    margin-bottom: 15.4px;
+    margin-bottom: 1.1rem;
+    margin-bottom: 26px;
+  }
+
+  .epsilon, h5 {
+    font-size: 18px;
+    font-size: 1.125rem;
+    margin-bottom: 17.96667px;
+    margin-bottom: 1.28333rem;
+    margin-bottom: 26px;
+  }
+
+  .zeta, h6 {
+    font-size: 16px;
+    font-size: 1rem;
+    margin-bottom: 20.2125px;
+    margin-bottom: 1.44375rem;
+    margin-bottom: 26px;
+  }
+}
+/**
+ * Paragraphs
+ */
+/**
+ * Anchors
+ */
+a {
+  text-decoration: none;
+}
+
+/**
+ * Lists
+ */
+ul {
+  list-style: square;
+}
+
+/**
+ * Text inputs
+ */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"] {
+  background-color: #FFFFFF;
+  border: 1px solid #E9E9E9;
+  border-radius: 12px;
+  color: #000000;
+  outline: none;
+  display: block;
+  padding: 13px 19.5px;
+  /**
+   * Media query adjustments
+   */
+}
+input[type="text"]::-webkit-input-placeholder,
+input[type="email"]::-webkit-input-placeholder,
+input[type="tel"]::-webkit-input-placeholder,
+input[type="password"]::-webkit-input-placeholder {
+  color: #000000;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+input[type="text"]::-moz-placeholder,
+input[type="email"]::-moz-placeholder,
+input[type="tel"]::-moz-placeholder,
+input[type="password"]::-moz-placeholder {
+  color: #000000;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+input[type="text"]:-ms-input-placeholder,
+input[type="email"]:-ms-input-placeholder,
+input[type="tel"]:-ms-input-placeholder,
+input[type="password"]:-ms-input-placeholder {
+  color: #000000;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="tel"]::placeholder,
+input[type="password"]::placeholder {
+  color: #000000;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+@media only screen and (min-width: 48em) {
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="password"] {
+    padding: 15px 26px;
+  }
+}
+
+table {
+  background-color: #FFFFFF;
+  border: 1px solid #CCCCCC;
+}
+
+thead {
+  background-color: #F5F5F5;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #F5F5F5;
+}
+
+/**
+ * Components
+ */
+/**
+ * Component styles.
+ */
+.grid {
+  /**
+   * Grid row.
+   *
+   * 1. Columns have top and bottom padding at smaller resolutions to supply
+   *    separation when they're stacked. We're remove the top padding from the
+   *    first column and bottom padding from the last column on each row to
+   *    avoid excessive padding.
+   */
+  /**
+   * Grid column.
+   *
+   * Note that both .grid__column and a modifier need to be applied to
+   * an element.
+   *
+   * 1. Full: Full width column.
+   * 2. One Third: One third width column.
+   * 3. Two Thirds: Two third width column.
+   * 4. Half: One half width column.
+   */
+}
+.grid__row {
+  padding: 0 19.5px;
+}
+.grid__row .grid__column:first-of-type {
+  /* [1] */
+  padding-top: 0;
+}
+.grid__row .grid__column:last-of-type {
+  /* [1] */
+  padding-bottom: 0;
+}
+.grid__column {
+  float: left;
+  min-height: 1px;
+  padding: 26px 0;
+  position: relative;
+  width: 100%;
+}
+.grid__column--full {
+  /**
+   * Media query adjustments.
+   */
+}
+@media only screen and (min-width: 60em) {
+  .grid__column--full {
+    padding: 0 39px;
+    width: 100%;
+  }
+}
+.grid__column--one-third {
+  /**
+   * Media query adjustments.
+   */
+}
+@media only screen and (min-width: 60em) {
+  .grid__column--one-third {
+    padding: 0 39px;
+    width: 33.333%;
+  }
+}
+.grid__column--two-thirds {
+  /**
+   * Media query adjustments.
+   */
+}
+@media only screen and (min-width: 60em) {
+  .grid__column--two-thirds {
+    padding: 0 39px;
+    width: 66.666%;
+  }
+}
+.grid__column--half {
+  /**
+   * Media query adjustments.
+   */
+}
+@media only screen and (min-width: 60em) {
+  .grid__column--half {
+    padding: 0 39px;
+    width: 50%;
+  }
+}
+.grid__column--one-sixth {
+  /**
+   * Media query adjustments.
+   */
+}
+@media only screen and (min-width: 60em) {
+  .grid__column--one-sixth {
+    padding: 0 39px;
+    width: 16.666%;
+  }
+}
+.grid__column--four-sixths {
+  /**
+   * Media query adjustments.
+   */
+}
+@media only screen and (min-width: 60em) {
+  .grid__column--four-sixths {
+    padding: 0 39px;
+    width: 66.666%;
+  }
+}
+.grid__column--five-sixths {
+  /**
+   * Media query adjustments.
+   */
+}
+@media only screen and (min-width: 60em) {
+  .grid__column--five-sixths {
+    padding: 0 39px;
+    width: 83.333%;
+  }
+}
+
+.logo {
+  background: #FFFFFF url(/wp-content/themes/rwd-is/logo--red.svg) center no-repeat;
+  background-size: 70% auto;
+  border-radius: 150px;
+  display: block;
+  height: 118px;
+  padding: 26px;
+  text-indent: -9999px;
+  width: 118px;
+  /**
+   * Media query adjustments.
+   *
+   * Logo progressively scales up at higher resolutions.
+   */
+  /**
+   * Media query adjustments.
+   */
+}
+.logo a {
+  display: block;
+  height: 118px;
+  width: 118px;
+}
+@media only screen and (min-width: 60em) {
+  .logo {
+    height: 177px;
+    width: 177px;
+  }
+  .logo a {
+    display: block;
+    height: 177px;
+    width: 177px;
+  }
+}
+@media only screen and (min-width: 90em) {
+  .logo {
+    height: 236px;
+    width: 236px;
+  }
+  .logo a {
+    display: block;
+    height: 236px;
+    width: 236px;
+  }
+}
+.logo--inverted {
+  background-color: #CC4E46;
+  background-image: url(/wp-content/themes/rwd-is/logo.svg);
+}
+
+/**
+ * There are some common styles that we are reusing through Sass placeholder selectors.
+ *
+ * 1. Apply a container to the resource.
+ * 2. Invert the resource text on hover.
+ * 3. Changed resource background to red on hover.
+ * 4. Changed resource background to black on hover.
+ */
+.resource--basic, .resource--two-column, .resource--media, .resource--video {
+  /* [1] */
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  box-shadow: 0 0 36px 0 rgba(0, 0, 0, 0.2);
+}
+.resource--basic:hover, .resource--two-column:hover, .resource--media:hover, .resource--video:hover {
+  /* [2] */
+}
+.resource--basic:hover .resource__title, .resource--two-column:hover .resource__title, .resource--media:hover .resource__title, .resource--video:hover .resource__title {
+  color: #FFFFFF;
+}
+.resource--basic:hover .resource__body, .resource--two-column:hover .resource__body, .resource--media:hover .resource__body, .resource--video:hover .resource__body {
+  color: rgba(255, 255, 255, 0.6);
+}
+.resource--basic:hover .resource__footer, .resource--two-column:hover .resource__footer, .resource--media:hover .resource__footer, .resource--video:hover .resource__footer {
+  color: #FFFFFF;
+}
+.resource--basic, .resource--two-column {
+  /* [3] */
+}
+.resource--basic:hover, .resource--two-column:hover {
+  background-color: #CC4E46;
+  box-shadow: 0 0 36px 1px rgba(204, 78, 70, 0.4);
+}
+.resource--media, .resource--video {
+  /* [4] */
+}
+.resource--media:hover, .resource--video:hover {
+  background-color: #000000;
+  box-shadow: 0 0 36px 0 rgba(0, 0, 0, 0.4);
+}
+
+/**
+ * Component styles.
+ */
+.resource {
+  margin-bottom: 52px;
+  /**
+   * Global styles.
+   */
+  /**
+   * Transitions.
+   */
+  -webkit-transition: all .25s ease;
+          transition: all .25s ease;
+  /**
+   * Resource type modifiers.
+   *
+   * 1. Basic: The basic resource comprises only of text.
+   * 2. Two Column: The two column resource can have the same content as a basic resource
+   *    along with an image e.g. a book cover beside it.
+   *     2a: As well as appling spacing between the two columns we're also adding
+   *         some bottom padding on the first column to avoid overlap with the
+   *         absolutely positioned footer.
+   *     2b: We're absolutely positioning the footer so that it's always positioned
+   *         at the bottom of the element.
+   * 3. Media: The media resource comprises of a title and an image.
+   * 4. Video: The video resource should have a placeholder image for the video it links to.
+   *     4a: Overlay a video play icon above the video placeholder.
+   * 5. Podcast: The podcast resource comprises of summary information for the given episode.
+   * 6. Post: The post resource comrpises of summary information for the given post.
+   */
+  /**
+   * Resource state modifiers.
+   *
+   * 1. Wide: Use in conjunction with the post type modifier to span two columns.
+   * 2. Small: Reduce type scale for resource.
+   */
+}
+.resource:last-of-type {
+  margin-bottom: 0;
+}
+.resource__header {
+  padding: 32.5px 26px 0;
+}
+.resource__title {
+  color: #000000;
+  line-height: 1.4;
+}
+.resource__title + .resource__meta {
+  margin-bottom: 6.5px;
+}
+.resource__meta {
+  color: #000000;
+  position: relative;
+  top: -.5em;
+}
+.resource__meta a {
+  /**
+   * Force apply font-family, font-style, font-weight
+   */
+  /**
+   * Selectively apply font-family, font-style and font-weights that differ from
+   * the base settings
+   */
+  font-weight: 700;
+  letter-spacing: 0;
+}
+.resource__body {
+  color: rgba(0, 0, 0, 0.45);
+  padding: 0 26px;
+}
+.resource__body p:last-of-type {
+  margin-bottom: 0;
+}
+.resource__body img {
+  float: left;
+  margin: 0;
+}
+.resource__image img {
+  float: left;
+  border-radius: 12px;
+  margin: 0;
+}
+.resource__link {
+  display: block;
+  text-decoration: none;
+}
+.resource__footer {
+  /**
+   * Force apply font-family, font-style, font-weight
+   */
+  /**
+   * Selectively apply font-family, font-style and font-weights that differ from
+   * the base settings
+   */
+  font-weight: 700;
+  letter-spacing: 0;
+  padding: 26px 26px 19.5px;
+  text-transform: uppercase;
+}
+.resource__footer a {
+  text-decoration: none;
+}
+.resource__title, .resource__body, .resource__footer {
+  -webkit-transition: color .25s ease;
+          transition: color .25s ease;
+}
+.resource--basic {
+  /* [1] */
+}
+.resource--two-column {
+  /* [2] */
+}
+.resource--two-column .resource__link {
+  position: relative;
+}
+.resource--two-column .resource__column {
+  float: left;
+  width: 50%;
+}
+.resource--two-column .resource__column:first-of-type {
+  /* [2a] */
+  padding: 0 13px 52px 0;
+}
+.resource--two-column .resource__column:last-of-type {
+  /* [2a] */
+  padding: 13px 19.5px;
+}
+.resource--two-column .resource__column img {
+  float: left;
+  margin: 0;
+}
+.resource--two-column .resource__header, .resource--two-column .resource__body, .resource--two-column .resource__footer {
+  padding-right: 0;
+}
+.resource--two-column .resource__footer {
+  /* [2b] */
+  bottom: 0;
+  left: 0;
+  position: absolute;
+}
+.resource--media {
+  /* [3] */
+}
+.resource--media .resource__body {
+  padding: 0;
+}
+.resource--media img {
+  border-radius: 0 0 12px 12px;
+}
+.resource--video {
+  /* [4] */
+}
+.resource--video .resource__body {
+  padding: 0;
+  position: relative;
+}
+.resource--video .resource__body:before {
+  /* [4a] */
+  background: rgba(0, 0, 0, 0.7) url(../../../images/site/video-icon.svg) center no-repeat;
+  background-size: 60% auto;
+  border-radius: 12px;
+  bottom: 19.5px;
+  display: block;
+  content: "";
+  height: 60px;
+  position: absolute;
+  right: 13px;
+  -webkit-transition: background-color .25s ease;
+          transition: background-color .25s ease;
+  width: 80px;
+  z-index: 2;
+}
+.resource--video:hover .resource__body:before {
+  background-color: #CC4E46;
+}
+.resource--video img {
+  border-radius: 0 0 12px 12px;
+}
+.resource--podcast {
+  /* [5] */
+}
+.resource--podcast .resource__header, .resource--podcast .resource__body, .resource--podcast .resource__footer {
+  padding: 0;
+}
+.resource--post {
+  /* [6] */
+}
+.resource--post .resource__header, .resource--post .resource__body, .resource--post .resource__footer {
+  padding: 0;
+}
+.resource--post .resource__footer {
+  padding-top: 26px;
+}
+.resource--post .resource__image a {
+  display: block;
+}
+.resource--post .resource__image img {
+  margin-bottom: 26px;
+  opacity: .6;
+  -webkit-transition: opacity .25s ease, box-shadow .25s ease;
+          transition: opacity .25s ease, box-shadow .25s ease;
+  width: 100%;
+}
+.resource--post:hover .resource__image img {
+  box-shadow: 0 0 36px 0 rgba(0, 0, 0, 0.2);
+  opacity: 1;
+}
+.resource--wide {
+  /* [1] */
+  /**
+   * Media query adjustments
+   */
+}
+@media only screen and (min-width: 48em) {
+  .resource--wide {
+    clear: left;
+  }
+  .resource--wide .resource__image, .resource--wide .resource__content {
+    float: left;
+    width: 50%;
+  }
+  .resource--wide .resource__image {
+    padding-right: 39px;
+  }
+  .resource--wide .resource__content {
+    padding: 0 26px 0 39px;
+  }
+}
+.resource--small {
+  /* [2] */
+}
+
+/**
+ * Component styles.
+ */
+.podcast-banner {
+  background-color: #CC4E46;
+  border-radius: 12px;
+  position: relative;
+}
+.podcast-banner__link {
+  display: block;
+  text-decoration: none;
+}
+.podcast-banner__image {
+  background-position: center;
+  background-size: cover;
+  border-radius: 12px 0 0 12px;
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 45%;
+}
+.podcast-banner__body {
+  margin-left: 45%;
+  width: 55%;
+}
+.podcast-banner__title {
+  color: #FFFFFF;
+  line-height: 1.4;
+  margin-bottom: 0;
+  padding: 26px 19.5px;
+}
+.podcast-banner__title small {
+  /**
+   * Force apply font-family, font-style, font-weight
+   */
+  /**
+   * Selectively apply font-family, font-style and font-weights that differ from
+   * the base settings
+   */
+  letter-spacing: 0;
+  display: block;
+  padding-top: 13px;
+}
+.podcast-banner:hover {
+  box-shadow: 0 0 36px 1px rgba(204, 78, 70, 0.2);
+}
+
+/**
+ * Component styles.
+ */
+.btn {
+  background-color: #000000;
+  border-radius: 12px;
+  border: none;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  letter-spacing: 1px;
+  line-height: 14px;
+  padding: 13px 19.5px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  -webkit-transition: all .25s ease;
+          transition: all .25s ease;
+  /**
+   * Media query adjustments.
+   *
+   * We scale up the buttons padding at breakpoint 2. The
+   * type scale is increased via the .small-text helper.
+   */
+  /**
+   * Button type modifiers.
+   *
+   * 1. Inverted: A flipped version of the default button.
+   * 2. Call-To-Action: A call to action version of the button.
+   *     2a: The call to action button can be inverted to be used over a darker background
+   *         by combining it with the inverted modifier.
+   * 3. Secondary: The secondary button is typically used in the subscription section.
+   *     3a: The secondary button can be inverted to be used over a darker background
+   *         by combining it with the inverted modifier.
+   * 4. Alt: Alternative hover state.
+   */
+}
+.btn:active, .btn:focus, .btn:visited {
+  color: #FFFFFF;
+}
+.btn:hover, .btn:visited:hover {
+  background-color: #FFFFFF;
+  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.2);
+  color: #000000;
+}
+@media only screen and (min-width: 48em) {
+  .btn {
+    padding: 18.2px 29.25px;
+  }
+}
+.btn--inverted {
+  /* [1] */
+  background-color: #FFFFFF;
+  color: #000000;
+}
+.btn--inverted:hover, .btn--inverted:visited:hover {
+  background-color: #000000;
+  box-shadow: none;
+  color: #FFFFFF !important;
+}
+.btn--cta {
+  /* [2] */
+  background-color: #CC4E46;
+  color: #FFFFFF;
+}
+.btn--cta:hover, .btn--cta:visited:hover {
+  background-color: #FFFFFF;
+  box-shadow: 0 0 30px 1px rgba(204, 78, 70, 0.2);
+  color: #CC4E46 !important;
+}
+.btn--cta.btn--inverted {
+  /* [2a] */
+  background-color: #FFFFFF;
+  color: #CC4E46;
+}
+.btn--cta.btn--inverted:hover, .btn--cta.btn--inverted:visited:hover {
+  background-color: #000000;
+  box-shadow: none;
+  color: #FFFFFF !important;
+}
+.btn--secondary {
+  /* [3] */
+  background-color: #59ABA9;
+  color: #FFFFFF;
+}
+.btn--secondary:hover, .btn--secondary:visited:hover {
+  background-color: #FFFFFF;
+  box-shadow: 0 0 30px 1px rgba(89, 171, 169, 0.3);
+  color: #59ABA9 !important;
+}
+.btn--secondary.btn--inverted {
+  /* [3a] */
+  background-color: #FFFFFF;
+  color: #59ABA9;
+}
+.btn--secondary.btn--inverted:hover, .btn--secondary.btn--inverted:visited:hover {
+  background-color: #59ABA9;
+  box-shadow: 0 0 30px 1px rgba(89, 171, 169, 0.3);
+  color: #FFFFFF !important;
+}
+.btn--alt {
+  /* [4] */
+}
+.btn--alt:hover, .btn--alt:visited:hover {
+  background-color: #000000;
+  box-shadow: none;
+  color: #FFFFFF !important;
+}
+
+@font-face {
+  font-family: 'icomoon';
+  src: url("../../../fonts/icomoon.eot?tsx43x");
+  src: url("../../../fonts/icomoon.eot?tsx43x#iefix") format("embedded-opentype"), url("../../../fonts/icomoon.woff2?tsx43x") format("woff2"), url("../../../fonts/icomoon.ttf?tsx43x") format("truetype"), url("../../../fonts/icomoon.woff?tsx43x") format("woff"), url("../../../fonts/icomoon.svg?tsx43x#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+[class^="icon--"], [class*=" icon--"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon--link:before {
+  content: "\e909";
+}
+
+.icon--down-arrow:before {
+  content: "\e90a";
+}
+
+.icon--articles:before {
+  content: "\e900";
+}
+
+.icon--down:before {
+  content: "\e901";
+}
+
+.icon--exit-arrow:before {
+  content: "\e902";
+}
+
+.icon--facebook:before {
+  content: "\e903";
+}
+
+.icon--GPlus:before {
+  content: "\e904";
+}
+
+.icon--linkedin:before {
+  content: "\e905";
+}
+
+.icon--news:before {
+  content: "\e906";
+}
+
+.icon--podcast:before {
+  content: "\e907";
+}
+
+.icon--twitter:before {
+  content: "\e908";
+}
+
+.welcome {
+  color: #FFFFFF;
+  padding: 26px 0;
+  position: relative;
+  /**
+   * Media query adjustments.
+   */
+}
+.welcome__header {
+  /**
+   * Media query adjustments.
+   *
+   * Welcome header becomes absolutely positioned a breakpoint 4.
+   */
+}
+@media only screen and (min-width: 90em) {
+  .welcome__header {
+    left: 0;
+    position: absolute;
+    top: 26px;
+    width: 290px;
+  }
+}
+.welcome__logo {
+  height: 118px;
+  margin-bottom: 52px;
+  width: 118px;
+  /**
+   * Media query adjustments.
+   *
+   * Logo progressively scales up at higher resolutions.
+   */
+  /**
+   * Media query adjustments.
+   */
+}
+@media only screen and (min-width: 60em) {
+  .welcome__logo {
+    height: 177px;
+    width: 177px;
+  }
+}
+@media only screen and (min-width: 90em) {
+  .welcome__logo {
+    height: 236px;
+    width: 236px;
+  }
+}
+.welcome__body {
+  /**
+   * Media query adjustments.
+   *
+   * We add some left padding to account for the title overlap.
+   */
+  /**
+   * Media query adjustments.
+   *
+   * Logo becomes absolutely positioned and left aligned at
+   * breakpoint 4 so we apply padding to account for this here.
+   */
+}
+@media only screen and (min-width: 60em) {
+  .welcome__body {
+    padding-left: 78px;
+  }
+}
+@media only screen and (min-width: 90em) {
+  .welcome__body {
+    padding-left: 342px;
+  }
+}
+.welcome__title {
+  color: #FFFFFF;
+  margin-bottom: 26px;
+  /**
+   * Media query adjustments.
+   *
+   * We apply and indent effect to the welcome title at
+   * breakpoint 3.
+   */
+}
+@media only screen and (min-width: 60em) {
+  .welcome__title span {
+    display: block;
+    left: -52px;
+    position: relative;
+  }
+}
+.welcome__lead {
+  /**
+   * Media query adjustments.
+   *
+   * We restrict the width of the lead paragraph.
+   */
+  /**
+   * Media query adjustments
+   */
+}
+@media only screen and (min-width: 60em) {
+  .welcome__lead {
+    padding-left: 20px;
+    width: 65%;
+  }
+}
+@media only screen and (min-width: 90em) {
+  .welcome__lead {
+    width: 45%;
+  }
+}
+@media only screen and (min-width: 60em) {
+  .welcome {
+    padding: 52px 0;
+  }
+}
+
+.section {
+  padding: 52px 0;
+}
+.section:last-of-type {
+  padding-bottom: 78px;
+}
+.section__header {
+  margin: 13px 0 26px;
+  /**
+   * Media query adjustments
+   */
+}
+@media only screen and (min-width: 60em) {
+  .section__header {
+    margin: 13px 0 39px;
+  }
+}
+.section__title {
+  margin-bottom: 0;
+}
+.section__column {
+  position: relative;
+  /**
+   * Media query adjustments
+   */
+}
+@media only screen and (min-width: 60em) {
+  .section__column--right-divider:before {
+    border: 2px solid #E9E9E9;
+    display: block;
+    content: "";
+    height: 100%;
+    position: absolute;
+    right: -41px;
+    top: 0;
+  }
+  .section__column--left-divider:before {
+    border: 2px solid #E9E9E9;
+    display: block;
+    content: "";
+    height: 100%;
+    left: -41px;
+    position: absolute;
+    top: 0;
+  }
+}
+.section__footer {
+  clear: left;
+  margin: 0 0 13px;
+  padding-top: 39px;
+}
+.section--highlighted {
+  background-color: #FFFFFF;
+}
+.section--secondary {
+  background-color: #C5ECEB;
+  color: #1A6A68;
+}
+.section--two-col {
+  /**
+   * Media query adjustments.
+   */
+}
+@media only screen and (min-width: 60em) {
+  .section--two-col .section__header {
+    float: left;
+    width: 33.333%;
+    padding: 0 39px;
+  }
+  .section--two-col .section__body {
+    float: left;
+    width: 66.666%;
+    padding: 0 39px;
+  }
+}
+.section--padded {
+  /**
+   * Media query adjustments
+   */
+}
+@media only screen and (min-width: 60em) {
+  .section--padded {
+    padding: 104px 0;
+  }
+}
+
+/**
+ * Component styles.
+ */
+.section-summaries {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  /**
+   * Media query adjustments.
+   *
+   * The section summary items appear stacked until breakpoint
+   * 2 when we apply flex to align them and maintain equal heights.
+   */
+}
+.section-summaries__item {
+  background-color: #FFFFFF;
+  box-shadow: 0 0 36px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  margin-bottom: 52px;
+  padding: 13px 26px 26px;
+  position: relative;
+  text-align: center;
+  z-index: 1;
+  /**
+   * Media query adjustments.
+   *
+   * At breakpoint 1 we set the item to flex so that the image and
+   * text are side by side.
+   */
+  /**
+   * Media query adjustments.
+   *
+   * At breakpoint 2 we revert back to the stacked view and add the
+   * skewed corners on the first and last items.
+   *
+   * 1. We add an :after element to the item, skew it with a transform and
+   *    position it to overlap the bottom of the item.
+   * 2. Because we want to maintain a constant shadow around the item we've
+   *    applied a shadow around the :after element as well. We add a :before
+   *    element to mask the overlaping shadow from the :after element.
+   */
+  /**
+   * Media query adjustments
+   */
+}
+.section-summaries__item:last-of-type {
+  margin-bottom: 0;
+}
+@media only screen and (min-width: 30em) {
+  .section-summaries__item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 26px;
+  }
+}
+@media only screen and (min-width: 48em) {
+  .section-summaries__item {
+    display: block;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 0px;
+            flex: 1 0 0px;
+    margin: 0 39px;
+  }
+  .section-summaries__item:first-of-type:after, .section-summaries__item:last-of-type:after {
+    /* [1} */
+    background: inherit;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 0 36px 0 rgba(0, 0, 0, 0.1);
+    bottom: 0;
+    content: "";
+    display: block;
+    left: 0;
+    height: 40px;
+    position: absolute;
+    -webkit-transform-origin: left bottom;
+            transform-origin: left bottom;
+    -webkit-transform: skewY(3deg);
+            transform: skewY(3deg);
+    width: 100%;
+    z-index: 2;
+  }
+  .section-summaries__item:first-of-type:before, .section-summaries__item:last-of-type:before {
+    /* [2] */
+    background: inherit;
+    bottom: 0;
+    border-radius: 12px;
+    display: block;
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 3;
+  }
+  .section-summaries__item:first-of-type {
+    border-radius: 12px 12px 12px 0;
+    margin-left: 0;
+  }
+  .section-summaries__item:first-of-type:after {
+    /* [1} */
+    -webkit-transform-origin: right bottom;
+            transform-origin: right bottom;
+    -webkit-transform: skewY(-3deg);
+            transform: skewY(-3deg);
+  }
+  .section-summaries__item:last-of-type {
+    border-radius: 12px 12px 0 12px;
+    margin-right: 0;
+  }
+  .section-summaries__item:last-of-type:after {
+    /* [1} */
+    -webkit-transform-origin: left bottom;
+            transform-origin: left bottom;
+    -webkit-transform: skewY(3deg);
+            transform: skewY(3deg);
+  }
+}
+@media only screen and (min-width: 60em) {
+  .section-summaries__item {
+    padding: 13px 39px 39px;
+  }
+}
+.section-summaries__image {
+  display: block;
+  margin: 0 auto 13px;
+  position: relative;
+  width: 60%;
+  z-index: 4;
+  /**
+   * Media query adjustments.
+   *
+   * When the image is left aligned we need to reduce it's
+   * size otherwise it outscales the text on resize.
+   */
+  /**
+   * Media query adjustments.
+   *
+   * We reset the image at breakpoint 2.
+   */
+}
+@media only screen and (min-width: 30em) {
+  .section-summaries__image {
+    float: left;
+    margin: 0 26px 0 0;
+    width: 30%;
+  }
+}
+@media only screen and (min-width: 48em) {
+  .section-summaries__image {
+    float: none;
+    margin: 0 auto 13px;
+    width: 60%;
+  }
+}
+.section-summaries__header, .section-summaries__body, .section-summaries__footer {
+  position: relative;
+  z-index: 4;
+}
+@media only screen and (min-width: 48em) {
+  .section-summaries {
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+.subscription-form__email[type=text] {
+  background-color: #59ABA9;
+  border: 1px solid #59ABA9;
+  color: #FFFFFF;
+  float: left;
+  margin-right: 13px;
+  width: 230px;
+  /**
+   * Media query adjustments.
+   *
+   * We restrict the width of the email input at breakpoint 3.
+   */
+}
+.subscription-form__email[type=text]::-webkit-input-placeholder {
+  color: #C5ECEB;
+}
+.subscription-form__email[type=text]::-moz-placeholder {
+  color: #C5ECEB;
+}
+.subscription-form__email[type=text]:-ms-input-placeholder {
+  color: #C5ECEB;
+}
+.subscription-form__email[type=text]::placeholder {
+  color: #C5ECEB;
+}
+@media only screen and (min-width: 60em) {
+  .subscription-form__email[type=text] {
+    max-width: 500px;
+    width: 100%;
+  }
+}
+.subscription-form__submit {
+  float: left;
+}
+
+/**
+ * Component styles.
+ *
+ * 1. Primary: The primary overlaying navigation for the site.
+ * 2. Secondary: The secondary navigation is a simple listing of links.
+ * 3. Social: The social navigation comprises of social network icon links.
+ * 4. Breadcrumb: A breadcrumb navigation used on the content pages.
+ * 5. Sidebar Menu: The sidebar menu is used for hierarchical content.
+ */
+.nav--primary {
+  /* [1] */
+}
+.nav--primary .nav__bar {
+  background-color: #FFF;
+  box-shadow: 10px 0 36px 0 rgba(0, 0, 0, 0.2);
+  display: none;
+  left: 0;
+  padding: 0 13px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  /**
+   * Media query adjustments
+   */
+}
+@media only screen and (min-width: 60em) {
+  .nav--primary .nav__bar {
+    padding: 0 65px;
+  }
+}
+.nav--primary .nav__logo {
+  background-size: 100% auto;
+  height: 60px;
+  left: 13px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  width: 60px;
+}
+.nav--primary .nav__container {
+  background-color: #FFFFFF;
+  border: 9.75px solid #CC4E46;
+  bottom: 19.5px;
+  box-shadow: 0 0 6.5px 50px #FFFFFF;
+  display: none;
+  padding: 65px 26px 26px;
+  position: fixed;
+  top: 9.75px;
+  left: 9.75px;
+  right: 9.75px;
+  z-index: 10;
+  /**
+   * Media query adjustments
+   */
+}
+@media only screen and (min-width: 60em) {
+  .nav--primary .nav__container {
+    border: 13px solid #CC4E46;
+    box-shadow: 0 0 19.5px 50px #FFFFFF;
+    padding: 39px;
+    top: 19.5px;
+    left: 19.5px;
+    right: 19.5px;
+  }
+}
+.nav--primary .nav__items {
+  /**
+   * Media query adjustments
+   */
+}
+@media only screen and (min-width: 60em) {
+  .nav--primary .nav__items {
+    -ms-flex-line-pack: stretch;
+        align-content: stretch;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+.nav--primary .nav__item {
+  border-bottom: 1px solid #E9E9E9;
+  display: block;
+  margin-bottom: 13px;
+  padding: 3.25px 0;
+  /**
+   * Media query adjustments
+   */
+}
+.nav--primary .nav__item:last-of-type {
+  border: none;
+}
+@media only screen and (min-width: 60em) {
+  .nav--primary .nav__item {
+    border: none;
+    display: inline-block;
+    margin-bottom: 39px;
+    padding: 0;
+    width: 28%;
+  }
+}
+.nav--primary .nav__title {
+  color: #000000;
+  margin-bottom: 0;
+  -webkit-transition: color .25s ease;
+          transition: color .25s ease;
+}
+.nav--primary .nav__desc {
+  color: #000000;
+  display: none;
+  opacity: .5;
+  -webkit-transition: opacity .25s ease;
+          transition: opacity .25s ease;
+  /**
+   * Media query adjustments
+   */
+}
+@media only screen and (min-width: 60em) {
+  .nav--primary .nav__desc {
+    display: block;
+  }
+}
+.nav--primary .nav__link {
+  display: block;
+}
+.nav--primary .nav__link:hover .nav__title {
+  color: #CC4E46;
+}
+.nav--primary .nav__link:hover .nav__desc {
+  opacity: 1;
+}
+.nav--primary .nav__handle {
+  color: #CC4E46;
+  cursor: pointer;
+  height: 23px;
+  overflow: hidden;
+  padding-right: 45.5px;
+  position: absolute;
+  right: 39px;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  top: 39px;
+  z-index: 20;
+  /**
+   * Media query adjustments
+   */
+}
+.nav--primary .nav__handle span {
+  background-color: #CC4E46;
+  display: block;
+  height: 3px;
+  opacity: 1;
+  position: absolute;
+  right: 26px;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+  -webkit-transition: .25s ease-in-out;
+          transition: .25s ease-in-out;
+  width: 28px;
+}
+.nav--primary .nav__handle span:nth-child(1) {
+  top: 0px;
+}
+.nav--primary .nav__handle span:nth-child(2) {
+  top: 10px;
+}
+.nav--primary .nav__handle span:nth-child(3) {
+  top: 20px;
+}
+@media only screen and (min-width: 60em) {
+  .nav--primary .nav__handle {
+    right: 78px;
+    top: 65px;
+  }
+}
+.nav--primary .nav__handle-label {
+  text-transform: uppercase;
+}
+.nav--primary .nav__handle-container {
+  position: absolute;
+  height: 23px;
+  top: 0;
+  right: -26px;
+  width: 57px;
+}
+.nav--primary.nav--inverted .nav__handle-label {
+  color: #FFFFFF;
+}
+.nav--primary.nav--inverted .nav__handle-container span {
+  background-color: #FFFFFF;
+}
+.nav--primary.nav--inverted.open .nav__handle-label, .nav--primary.nav--inverted.fixed .nav__handle-label {
+  color: #CC4E46;
+}
+.nav--primary.nav--inverted.open .nav__handle-container span, .nav--primary.nav--inverted.fixed .nav__handle-container span {
+  background-color: #CC4E46;
+}
+.nav--primary.open .nav__container {
+  display: block;
+}
+.nav--primary.open .nav__handle {
+  color: #CC4E46;
+  position: fixed;
+}
+.nav--primary.open .nav__handle span {
+  background-color: #CC4E46;
+}
+.nav--primary.open .nav__handle span:nth-child(1) {
+  top: 11px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+.nav--primary.open .nav__handle span:nth-child(2) {
+  opacity: 0;
+  right: -60px;
+}
+.nav--primary.open .nav__handle span:nth-child(3) {
+  top: 11px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.nav--primary.fixed {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+.nav--primary.fixed.open .nav__handle {
+  top: 39px;
+  /**
+   * Media query adjustments
+   */
+}
+@media only screen and (min-width: 60em) {
+  .nav--primary.fixed.open .nav__handle {
+    top: 65px;
+  }
+}
+.nav--primary.fixed .nav__bar {
+  display: block;
+}
+.nav--primary.fixed .nav__handle {
+  top: 18.2px;
+  right: 39px;
+  /**
+   * Media query adjustments
+   */
+}
+@media only screen and (min-width: 60em) {
+  .nav--primary.fixed .nav__handle {
+    right: 78px;
+  }
+}
+.nav--secondary {
+  /* [2] */
+}
+.nav--secondary .nav__item {
+  display: block;
+  /**
+   * Media query adjustments.
+   *
+   * Navigation items align in a row at breakpoint 3.
+   */
+}
+.nav--secondary .nav__item:first-of-type {
+  margin-left: 0;
+}
+.nav--secondary .nav__item:last-of-type {
+  margin-right: 0;
+}
+@media only screen and (min-width: 60em) {
+  .nav--secondary .nav__item {
+    display: inline-block;
+    margin: 0 26px;
+  }
+}
+.nav--secondary .nav__link {
+  color: #000000;
+  text-decoration: none;
+}
+.nav--secondary .nav__link:hover {
+  color: #CC4E46;
+}
+.nav--secondary .nav__link .icon {
+  position: relative;
+  top: 2px;
+}
+.nav--secondary .nav__link .icon--exit-arrow {
+  margin-left: 6.5px;
+}
+.nav--social {
+  /* [3] */
+}
+.nav--social .nav__item {
+  margin: 0 3.25px;
+  /**
+   * Media query adjustments.
+   *
+   * We increase the spacing between the navigation items at breakpoint 3.
+   */
+}
+.nav--social .nav__item:first-of-type {
+  margin-left: 0;
+}
+.nav--social .nav__item:last-of-type {
+  margin-right: 0;
+}
+@media only screen and (min-width: 60em) {
+  .nav--social .nav__item {
+    margin: 0 6.5px;
+  }
+}
+.nav--social .nav__link {
+  border: 2px solid #59ABA9;
+  border-radius: 9px;
+  color: #59ABA9;
+  line-height: 24px;
+  padding-top: 2px;
+  text-align: center;
+  text-decoration: none;
+  width: 30px;
+  /**
+   * Media query adjustments.
+   *
+   * We scale up the size of the navigation items at breakpoint 3.
+   */
+}
+.nav--social .nav__link:hover {
+  border: 2px solid #1A6A68;
+  color: #1A6A68;
+}
+@media only screen and (min-width: 60em) {
+  .nav--social .nav__link {
+    font-size: 18px;
+    font-size: 1.28571rem;
+    border-radius: 12px;
+    line-height: 30px;
+    width: 35px;
+  }
+}
+.nav--breadcrumb {
+  /* [4] */
+}
+.nav--breadcrumb .nav__item {
+  color: #000000;
+  padding-right: 26px;
+  position: relative;
+}
+.nav--breadcrumb .nav__item:after {
+  display: block;
+  content: "\003e";
+  position: absolute;
+  top: 0;
+  right: 7px;
+}
+.nav--breadcrumb .nav__item:last-of-type:after {
+  display: none;
+}
+.nav--breadcrumb .nav__link {
+  color: rgba(0, 0, 0, 0.45);
+}
+.nav--sidebar-menu .nav__title {
+  margin-bottom: 13px;
+  padding: 0 39px 0 57px;
+}
+.nav--sidebar-menu .page_item {
+  background-color: #F5F5F5;
+  border-bottom: 1px solid #E0E6ED;
+  display: block;
+  position: relative;
+}
+.nav--sidebar-menu .page_item:first-of-type {
+  border-top: 1px solid #E0E6ED;
+}
+.nav--sidebar-menu .page_item.current_page_parent a {
+  border-color: #CC4E46;
+}
+.nav--sidebar-menu .page_item.current_page_parent .children .page_item {
+  display: block;
+}
+.nav--sidebar-menu .page_item.current_page_parent .icon {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+.nav--sidebar-menu .page_item .icon {
+  display: block;
+  padding: 13px;
+  position: absolute;
+  right: 26px;
+  top: 5px;
+}
+.nav--sidebar-menu a {
+  /**
+   * Force apply font-family, font-style, font-weight
+   */
+  /**
+   * Selectively apply font-family, font-style and font-weights that differ from
+   * the base settings
+   */
+  font-weight: 700;
+  letter-spacing: 0;
+}
+.nav--sidebar-menu .children {
+  display: none;
+}
+.nav--sidebar-menu .children .page_item {
+  background-color: #FFFFFF;
+  border-top: 1px solid #E0E6ED;
+  display: block;
+}
+.nav--sidebar-menu a, .nav--sidebar-menu a {
+  border-left: 5px solid transparent;
+  color: #000000;
+  display: block;
+}
+.nav--sidebar-menu a:hover, .nav--sidebar-menu  .children .page_item a:hover {
+  color: #CC4E46;
+}
+.nav--sidebar-menu a:hover .icon, .nav--sidebar-menu .nav__child-link:hover .icon {
+  color: #000000;
+}
+.nav--sidebar-menu a.active, .nav--sidebar-menu  .children .page_item a.active {
+  color: #CC4E46;
+}
+.nav--sidebar-menu a {
+  padding: 13px 13px 13px 52px;
+  width: 75%;
+}
+.nav--sidebar-menu .children .page_item a {
+  padding: 13px 52px;
+}
+
+.learn-more {
+  color: #FFFFFF;
+  text-align: center;
+  text-transform: uppercase;
+}
+.learn-more .icon {
+  display: block;
+  padding-top: 13px;
+}
+
+.search-form__query {
+  float: left;
+  margin-right: 13px;
+  width: 180px;
+  /**
+   * Media query adjustments.
+   *
+   * We restrict the width of the email input at breakpoint 3.
+   */
+}
+@media only screen and (min-width: 60em) {
+  .search-form__query {
+    max-width: 600px;
+    width: 100%;
+  }
+}
+.search-form__submit {
+  float: left;
+}
+
+.page-header {
+  clear: left;
+  padding: 13px 0;
+  /**
+   * Media query adjustments
+   */
+}
+.page-header__title {
+  margin-bottom: 0;
+}
+@media only screen and (min-width: 48em) {
+  .page-header {
+    clear: none;
+    float: left;
+    padding: 26px 156px 26px 78px;
+  }
+}
+
+.meta-block {
+  background-color: #CC4E46;
+  border-radius: 12px;
+  box-shadow: 0 0 36px 0 rgba(0, 0, 0, 0.2);
+  color: #FFFFFF;
+  padding: 39px 26px;
+}
+.meta-block__aside {
+  /**
+   * Media query adjustments
+   */
+}
+.meta-block__aside p {
+  margin-bottom: 0;
+}
+@media only screen and (min-width: 60em) {
+  .meta-block__aside {
+    float: left;
+    width: 33.333%;
+  }
+}
+.meta-block__body {
+  clear: left;
+  /**
+   * Media query adjustments
+   */
+}
+.meta-block__body p:last-of-type {
+  margin-bottom: 0;
+}
+@media only screen and (min-width: 60em) {
+  .meta-block__body {
+    clear: none;
+    float: left;
+    width: 66.666%;
+  }
+}
+.meta-block__title {
+  font-size: 16px;
+  font-size: 1.14286rem;
+  color: #FFFFFF;
+  margin-bottom: 6.5px;
+  /**
+   * Media query adjustments.
+   */
+}
+@media only screen and (min-width: 48em) {
+  .meta-block__title {
+    font-size: 18px;
+    font-size: 1.125rem;
+  }
+}
+.meta-block__items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.meta-block__item {
+  list-style: none;
+  margin-bottom: 26px;
+  /**
+   * Media query adjustments
+   */
+  /**
+   * Media query adjustments
+   */
+  /**
+   * Media query adjustments
+   */
+}
+@media only screen and (min-width: 30em) {
+  .meta-block__item {
+    float: left;
+    width: 50%;
+  }
+}
+@media only screen and (min-width: 48em) {
+  .meta-block__item {
+    width: 33.333%;
+  }
+}
+@media only screen and (min-width: 60em) {
+  .meta-block__item {
+    float: none;
+    width: 100%;
+  }
+}
+.meta-block .icon {
+  background-color: #FFFFFF;
+  border-radius: 6px;
+  margin: 0 6.5px;
+  padding: 6px;
+}
+.meta-block .icon--exit-arrow {
+  padding-right: 4px;
+}
+
+/**
+ * UI
+ */
+body {
+  background-color: #F5F5F5;
+  border: 9.75px solid #FFFFFF;
+  /**
+   * Media query adjustments.
+   */
+}
+@media only screen and (min-width: 60em) {
+  body {
+    border-width: 19.5px;
+  }
+}
+
+/**
+ * UI styles for resource component.
+ *
+ * 1. Add bottom margin to .podcast-banner.
+ */
+.resource .podcast-banner {
+  /* [1] */
+  margin-bottom: 26px;
+}
+
+.section-heading {
+  color: #CC4E46;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.section-heading .icon {
+  font-size: 18px;
+  font-size: 1.28571rem;
+  background-color: #CC4E46;
+  border-radius: 6px;
+  color: #FFFFFF;
+  display: inline-block;
+  height: 34px;
+  line-height: 34px;
+  margin-right: 6.5px;
+  padding: 0 6.5px;
+  position: relative;
+  text-align: center;
+  top: 2px;
+  width: 34px;
+}
+
+.site-header--compact {
+  background-color: #FFFFFF;
+  padding: 19.5px 19.5px;
+  /**
+   * Media query adjustments
+   */
+}
+.site-header--compact .logo {
+  float: left;
+  height: 90px;
+  position: relative;
+  top: -6px;
+  width: 90px;
+  /**
+   * Media query adjustments
+   */
+}
+@media only screen and (min-width: 48em) {
+  .site-header--compact .logo {
+    height: 120px;
+    width: 120px;
+  }
+}
+@media only screen and (min-width: 48em) {
+  .site-header--compact {
+    padding: 19.5px 58.5px;
+  }
+}
+.site-header--expanded {
+  background-color: #CC4E46;
+  padding: 0 26px;
+  margin-bottom: 156px;
+  /**
+   * Media query adjustments.
+   */
+  /**
+   * Media query adjustments.
+   */
+}
+.site-header--expanded .learn-more {
+  padding-top: 78px;
+}
+.site-header--expanded .section-summaries {
+  bottom: -104px;
+  margin-top: -26px;
+}
+@media only screen and (min-width: 60em) {
+  .site-header--expanded {
+    padding: 26px 65px 0;
+  }
+}
+@media only screen and (min-width: 90em) {
+  .site-header--expanded {
+    padding-top: 156px;
+  }
+}
+
+.nav--primary .search-form {
+  margin-bottom: 26px;
+  /**
+   * Media query adjustments
+   */
+}
+@media only screen and (min-width: 60em) {
+  .nav--primary .search-form {
+    margin-bottom: 52px;
+  }
+}
+
+.subscribe {
+  border-top: 26px solid #FFFFFF;
+}
+.subscribe .lead {
+  margin: 0 0 39px;
+  /**
+   * Media query adjustments.
+   */
+}
+@media only screen and (min-width: 60em) {
+  .subscribe .lead {
+    margin: 0 0 52px;
+    max-width: 50%;
+  }
+}
+
+.entry {
+  border-top: 5px solid #F5F5F5;
+  background-color: #FFFFFF;
+  position: relative;
+}
+.entry .nav--sidebar-menu {
+  /**
+   * Media query adjustments
+   */
+}
+@media only screen and (min-width: 60em) {
+  .entry .nav--sidebar-menu {
+    left: 0;
+    position: absolute;
+    right: -52px;
+    top: 78px;
+  }
+}
+.entry .grid__column--one-sixth {
+  /**
+   * Media query adjustments
+   */
+}
+@media only screen and (min-width: 60em) {
+  .entry .grid__column--one-sixth {
+    left: 0;
+    position: absolute;
+  }
+}
+.entry .grid__column--five-sixths {
+  /**
+   * Media query adjustments
+   */
+}
+@media only screen and (min-width: 60em) {
+  .entry .grid__column--five-sixths {
+    margin-left: 16.666%;
+  }
+}
+.entry__sidebar {
+  padding-bottom: 104px;
+}
+.entry__body {
+  padding-top: 26px;
+  /**
+   * Media query adjustments
+   */
+}
+.entry__body .lead {
+  font-size: 18px;
+  font-size: 1.125rem;
+  /**
+   * Media query adjustments
+   */
+}
+@media only screen and (min-width: 60em) {
+  .entry__body .lead {
+    font-size: 21px;
+    font-size: 1.3125rem;
+  }
+}
+.entry__body .btn {
+  margin: 0 26px 26px 0;
+}
+.entry__body .btn + .btn {
+  margin-bottom: 0;
+}
+.entry__body > h2 {
+  /**
+   * Force apply font-family, font-style, font-weight
+   */
+  /**
+   * Selectively apply font-family, font-style and font-weights that differ from
+   * the base settings
+   */
+  font-weight: 700;
+  letter-spacing: 0;
+}
+.entry__body > h3 {
+  /**
+   * Force apply font-family, font-style, font-weight
+   */
+  /**
+   * Selectively apply font-family, font-style and font-weights that differ from
+   * the base settings
+   */
+  font-weight: 700;
+  letter-spacing: 0;
+}
+.entry__body table {
+  margin: 52px 0;
+}
+.entry__body .meta-block {
+  margin: 52px 0;
+}
+@media only screen and (min-width: 60em) {
+  .entry__body {
+    border-left: 5px solid #F5F5F5;
+    padding: 78px 104px;
+  }
+}
+
+/**
+ * Site footer UI styles with child component overrides/adjustments.
+ *
+ * 1.
+ */
+.site-footer {
+  background-color: #FFFFFF;
+  padding: 52px 19.5px 19.5px;
+  /**
+   * Media query adjustments.
+   *
+   * We increase the site footer padding at breakpoint 3.
+   */
+}
+.site-footer .nav--secondary {
+  /* [1] */
+  float: left;
+  margin-bottom: 39px;
+}
+.site-footer .nav--social {
+  /* [2] */
+  float: right;
+  margin-bottom: 39px;
+  position: relative;
+  top: -5px;
+}
+.site-footer__copyright {
+  clear: both;
+  margin-bottom: 0;
+}
+@media only screen and (min-width: 60em) {
+  .site-footer {
+    padding: 52px;
+  }
+}
+
+
+
+/*# sourceMappingURL=styles.css.map */
